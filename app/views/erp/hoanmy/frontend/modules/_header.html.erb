@@ -1,0 +1,85 @@
+<header class="site-header header-style-6">
+    <div class="top-bar bg-primary">
+        <div class="container">
+            <div class="row">
+                <div class="clearfix">							
+                    <div class="wt-topbar-left">
+                        <ul class="list-unstyled e-p-bx">
+                            <li><i class="fa fa-compass"></i>Công Ty TNHH Đầu Tư Dịch Vụ Xây Dựng Hoàn Mỹ</li>
+                            <li><i class="fa fa-envelope"></i><%= mail_to 'ddhoanmybaria@gmail.com', 'ddhoanmybaria@gmail.com', title: '' %></li>
+                            <li><i class="fa fa-phone"></i><%= link_to '(+84) 98 643 4384', 'tel:(+84) 98 643 4384', title: '' %></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-bar header-middle bg-white">
+        <div class="container">
+            <div class="logo-header">
+                <%= link_to image_tag('/hoanmy/images/logo.png', alt: ''), erp_hoanmy.root_path, title: '' %>
+            </div>
+            <div class="header-info">
+                <ul>
+                    <li>
+                        <div>
+                            <div class="icon-sm">
+                                <span class="icon-cell  text-primary"><i class="flaticon-placeholder"></i></span>
+                            </div>
+                            <div class="icon-content">
+                                <strong>ĐỊA CHỈ VĂN PHÒNG</strong>
+                                <span><a href="">86 Trương Định, Phường Phước Hưng, TP. Bà Rịa<br>Tỉnh Bà Rịa - Vũng Tàu, Việt Nam</a></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <div class="icon-sm">
+                                <span class="icon-cell  text-primary"><i class="flaticon-smartphone"></i></span>
+                            </div>
+                            <div class="icon-content">
+                                <strong>SỐ ĐIỆN THOẠI</strong>
+                                <span><%= link_to '(+84) 98 643 4384', 'tel:(+84) 98 643 4384', title: '' %></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="btn-col-last">
+                        <a class="site-button text-uppercase radius-sm font-weight-700" href="">HỒ SƠ NĂNG LỰC</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="sticky-header main-bar-wraper">
+        <div class="main-bar header-botton nav-bg-secondry">
+            <div class="container">
+                <!-- NAV Toggle Button -->
+                <button data-target=".header-nav" data-toggle="collapse" type="button" class="navbar-toggle collapsed">
+                    <span class="sr-only">MOBILE MENU</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- MAIN Nav -->
+                <div class="header-nav navbar-collapse collapse ">
+                    <ul class=" nav navbar-nav">
+                        <li class="active"><%= link_to 'Trang Chủ', erp_hoanmy.root_path, title: '' %></li>
+                        <li><%= link_to 'Giới Thiệu', '', title: '' %></li>
+                        <li><%= link_to 'Tư Vấn Đo Đạc', '', title: '' %></li>
+                        <li><%= link_to 'Thủ Tục Đất Đai', '', title: '' %></li>
+                        <li>
+                            <%= link_to 'Dự Án <i class="fa fa-chevron-down"></i>'.html_safe, '', title: '' %>
+                            <ul class="sub-menu">
+                                <li><%= link_to 'Dự Án Đang Thực Hiện', '', title: '' %></li>
+                                <li><%= link_to 'Dự Án Đã Thực Hiện', '', title: '' %></li>
+                            </ul>
+                        </li>
+                        <li><%= link_to 'Thư Viện Ảnh', '', title: '' %></li>
+                        <li><%= link_to 'Tin Chuyên Ngành', '', title: '' %></li>
+                        <li><%= link_to 'Liên Hệ', '', title: '' %></li>                                                                            
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>          
+</header>

@@ -1,0 +1,110 @@
+<footer class="site-footer footer-dark">
+    <!-- FOOTER BLOCKES START -->  
+    <div class="footer-top overlay-wraper">
+        <div class="overlay-main"></div>
+        <div class="container">
+            <div class="row">
+                <!-- ABOUT COMPANY -->
+                <div class="col-md-4 col-sm-12">  
+                    <div class="widget widget_about">
+                        <h4 class="widget-title">Về Công Ty</h4>
+                        <div class="logo-footer clearfix p-b15">
+                            <%= link_to image_tag('/hoanmy/images/logo.png', alt: ''), erp_hoanmy.root_path, title: '' %>
+                        </div>
+                        <p class="text-justify intro-footer">
+                            <strong>CÔNG TY TNHH ĐẦU TƯ DỊCH VỤ XÂY DỰNG HOÀN MỸ</strong> là một trong những công ty chuyên về lĩnh vực đo đạc và bản đồ, thiết kế kiến trúc xây dựng công trình và quy hoạch đô thị, là tập hợp một đội ngũ các Kỹ sư, Kiến trúc sư và các chuyên viên trong lĩnh vực đo đạc, định vị, thiết kế, quy hoạch phân lô các công trình xây dựng công cộng, công sở, các công trình xây dựng dân dụng và khu công nghiệp.
+                        </p>  
+                    </div>
+                </div>                             
+                <!-- USEFUL LINKS -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="widget widget_services">
+                        <h4 class="widget-title">Liên Kết Nhanh</h4>
+                        <ul>
+                            <li><a href="">Tư vấn đo đạc</a></li>
+                            <li><a href="">Thủ tục đất đai</a></li>
+                            <li><a href="">Dự án</a></li>
+                            <li><a href="">Thư viện ảnh</a></li>
+                            <li><a href="">Tin chuyên ngành</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- NEWSLETTER -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="widget widget_services">
+                        <h4 class="widget-title">Thông Tin Website</h4>
+                        <ul>
+                            <li><a href="about-1.html">Giới thiệu</a></li>
+                            <li><a href="faq-1.html">Liên hệ</a></li>
+                            <li><a href="career.html">Sitemap</a></li>
+                        </ul>
+                    </div>
+                    <!-- SOCIAL LINKS -->
+                    <div class="widget widget_social_inks">
+                        <h4 class="widget-title">Mạng xã hội</h4>
+                        <ul class="social-icons social-square social-darkest">
+                            <li><a href="javascript:void(0);" class="fa fa-facebook"></a></li>
+                            <li><a href="javascript:void(0);" class="fa fa-twitter"></a></li>
+                            <li><a href="javascript:void(0);" class="fa fa-linkedin"></a></li>
+                            <li><a href="javascript:void(0);" class="fa fa-rss"></a></li>
+                            <li><a href="javascript:void(0);" class="fa fa-youtube"></a></li>
+                            <li><a href="javascript:void(0);" class="fa fa-instagram"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+            
+               <div class="col-md-4 col-sm-12  p-tb5">
+                   <div class="wt-icon-box-wraper left  bdr-1 bdr-gray-dark p-tb15 p-lr10 clearfix">
+                        <div class="icon-md text-primary">
+                            <span class="iconmoon-travel"></span>
+                        </div>
+                        <div class="icon-content">
+                            <h5 class="wt-tilte text-uppercase m-b0">Địa chỉ</h5>
+                            <p><%= link_to '86 Trương Định, Phường Phước Hưng, TP. Bà Rịa, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam', '', title: '' %></p>
+                        </div>
+                   </div>
+                </div>
+               <div class="col-md-4 col-sm-6  p-tb5">
+                   <div class="wt-icon-box-wraper left  bdr-1 bdr-gray-dark p-tb15 p-lr10 clearfix ">
+                        <div class="icon-md text-primary">
+                            <span class="iconmoon-smartphone-1"></span>
+                        </div>
+                        <div class="icon-content">
+                            <h5 class="wt-tilte text-uppercase m-b0">Số điện thoại</h5>
+                            <p class="m-b0"><%= link_to '(+84) 98 643 4384', 'tel:(+84) 98 643 4384', title: '' %></p>
+                            <p><%= link_to '(+84) 98 643 4384', 'tel:(+84) 98 643 4384', title: '' %></p>
+                        </div>
+                   </div>
+               </div>
+               <div class="col-md-4 col-sm-6 p-tb5">
+                   <div class="wt-icon-box-wraper left  bdr-1 bdr-gray-dark p-tb15 p-lr10 clearfix">
+                        <div class="icon-md text-primary">
+                            <span class="iconmoon-email"></span>
+                        </div>
+                        <div class="icon-content">
+                            <h5 class="wt-tilte text-uppercase m-b0">Địa chỉ email</h5>
+                            <p class="m-b0"><%= mail_to 'ddhoanmybaria@gmail.com', 'ddhoanmybaria@gmail.com', title: '' %></p>
+                            <p><%= mail_to 'ddhoanmybaria@gmail.com', 'ddhoanmybaria@gmail.com', title: '' %></p>
+                        </div>
+                    </div>
+                </div>
+
+          </div>
+        </div>
+    </div>
+    <!-- FOOTER COPYRIGHT -->
+    <div class="footer-bottom overlay-wraper">
+        <div class="overlay-main"></div>
+        <div class="constrot-strip"></div>
+        <div class="container p-t15">
+            <div class="row">
+                <span class="copyrights-text">
+                    &copy; 2019 <strong><%= link_to 'DODACHOANMY.VN', erp_hoanmy.root_path, title: '', target: '_blank' %></strong> - Đơn vị chủ quản: <strong>Công Ty TNHH Đầu Tư Dịch Vụ Xây Dựng Hoàng Mỹ</strong>.
+                    GPĐKKD số 3502366765 do Phòng ĐKKD Sở KH&ĐT tỉnh Bà Rịa - Vũng Tàu cấp ngày 04/07/2018
+                </span>
+            </div>
+        </div>
+    </div>
+</footer>
