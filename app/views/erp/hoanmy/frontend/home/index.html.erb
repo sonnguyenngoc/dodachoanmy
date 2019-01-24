@@ -1,0 +1,245 @@
+<!-- Slider -->
+<div class="main-slider style-two default-banner">
+    <div class="tp-banner-container">
+        <div class="tp-banner" >
+            <!-- START REVOLUTION SLIDER 5.4.1 -->
+            <%= render "erp/hoanmy/frontend/modules/home/slider" %>
+            <!-- END REVOLUTION SLIDER -->
+        </div>
+    </div>
+</div>
+<!-- Slider END -->
+
+<!-- ABOUT COMPANY SECTION START -->
+<div class="section-full p-tb20 bg-gray">
+    <div class="container">
+        <div class="section-head text-center">
+            <h2 class="text-uppercase">TƯ VẤN - KHẢO SÁT ĐO ĐẠC</h2>
+            <div class="wt-separator-outer">
+                <div class="wt-separator style-square">
+                    <span class="separator-left bg-primary"></span>
+                    <span class="separator-right bg-primary"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 col-sm-5 col-xs-6 col-xs-100pc">
+                <div class="about-com-pic-2">
+                    <img src="hoanmy/images/surveyors-01.jpg" alt=""/>
+                </div>
+            </div>
+            <div class="col-md-7 col-sm-7 col-xs-12">
+                <div class="about-types row">
+                    <% (0..3).each do |consult| %>
+                        <div class="col-md-6 col-sm-6 m-b30">
+                            <div class="wt-icon-box-wraper bx-style-1 p-a23 center bg-white">
+                                <div class="icon-lg text-primary m-b20">
+                                    <span class="icon-cell text-primary">
+                                        <%= image_tag '/hoanmy/images/icon/home.png', alt: '' %>
+                                    </span>
+                                </div>
+                                <div class="icon-content">
+                                    <h5 class="wt-tilte text-uppercase">Building</h5>
+                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod .</p>
+                                </div>
+                            </div>
+                        </div>
+                    <% end %>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>   
+<!-- ABOUT COMPANY SECTION END -->
+            
+<!-- SERVICES START  -->         
+<div class="section-full bg-white p-t80 p-b50 scale-bg-top scale-bg-bottom">
+    <div class="container">
+        <!-- TITLE START -->
+        <div class="section-head text-center">
+            <h2 class="text-uppercase">THỦ TỤC ĐẤT ĐAI</h2>
+            <div class="wt-separator-outer">
+                <div class="wt-separator style-square">
+                  <span class="separator-left bg-primary"></span>
+                  <span class="separator-right bg-primary"></span>
+              </div>
+            </div>                
+        </div>
+        <!-- TITLE END -->        
+        <!-- CAROUSEL -->
+        <div class="section-content">
+            <div class="owl-carousel Home-services-carousel owl-btn-vertical-center">
+                <% (0..6).each do |procedure| %>
+                    <div class="item">
+                        <div class="wt-box bg-white">
+                            <div class="wt-media">
+                                <%= link_to (image_tag '/hoanmy/images/our-work/pic1.jpg', alt: ''), '', title: '' %>
+                            </div>
+                            <div class="wt-info p-tb10">
+                                <h4 class="wt-title m-t0 m-b5">
+                                    <%= link_to 'Tư vấn thủ tục đất đai', '', title: '' %>
+                                </h4>
+                                <p class="text-justify">
+                                    Thủ tục cấp giấy chứng nhận quyền sử dụng đất
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+            </div>        
+        </div>
+    </div>
+</div>
+<!-- SERVICES CONTENT END -->   
+
+<!-- SECTION CONTENT START -->
+<div class="section-full  p-tb30 bg-no-repeat bg-cover " style="background-image:url(/hoanmy/images/background/bg5.jpg);">    
+    <div class="container">        
+        <div class="row">
+            <div class="col-md-6  clearfix">
+                <div class="wt-box graph-tabing">
+                    <div class="wt-accordion acc-bg-primary acc-has-bg" id="accordion6">
+                            <div class="panel wt-panel">
+                            
+                                <div class="acod-head acc-actives">
+                                     <h6 class="acod-title text-uppercase">
+                                        <a data-toggle="collapse" href="#collapseOne6" data-parent="#accordion6" >
+                                            Build The House Of Your Dreams.
+                                            <span class="indicator"><i class="fa fa-plus"></i></span>
+                                        </a>
+                                     </h6>
+                                </div>
+                                
+                                <div id="collapseOne6" class="acod-body collapse in">
+                                    <div class="acod-content p-tb15">Web design lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                                </div>
+                                
+                            </div>
+                            <div class="panel wt-panel">
+                                <div class="acod-head">
+                                     <h6 class="acod-title text-uppercase">
+                                        <a data-toggle="collapse" href="#collapseTwo6" class="collapsed" data-parent="#accordion6" >
+                                        Follow Your Biggest Dream. 
+                                        <span class="indicator"><i class="fa fa-plus"></i></span>
+                                        </a>
+                                     </h6>
+                                </div>
+                                <div id="collapseTwo6" class="acod-body collapse">
+                                    <div class="acod-content p-tb15">Graphic design lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                                </div>
+                            </div>
+                            <div class="panel wt-panel">
+                                <div class="acod-head">
+                                 <h6 class="acod-title text-uppercase">
+                                    <a data-toggle="collapse"  href="#collapseThree6" class="collapsed"  data-parent="#accordion6">
+                                   Get The Best View In The City. 
+                                    <span class="indicator"><i class="fa fa-plus"></i></span>
+                                    </a>
+                                 </h6>
+                                </div>
+                                <div id="collapseThree6" class="acod-body collapse">
+                                    <div class="acod-content p-tb15">Developement lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                                </div>
+                            </div>
+                            
+                            <div class="panel wt-panel">
+                                <div class="acod-head">
+                                 <h6 class="acod-title text-uppercase">
+                                    <a data-toggle="collapse"  href="#collapseFour6" class="collapsed"  data-parent="#accordion6">
+                                   We Offer Best Services & Solutions.
+                                    <span class="indicator"><i class="fa fa-plus"></i></span>
+                                    </a>
+                                 </h6>
+                                </div>
+                                <div id="collapseFour6" class="acod-body collapse">
+                                    <div class="acod-content p-tb15">Developement lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                                </div>
+                            </div>
+                        </div>
+                </div>                               
+            </div>
+            <div class="col-md-6">
+                <div class="wt-box graph-part-right text-white">
+                    <strong class="text-uppercase title-first display-block">Construction</strong>
+                    <span class="text-uppercase text-primary display-block title-second">What are you looking for?</span>
+                    <p><strong>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
+                     type and scrambled it to make a type specimen book.</strong></p>
+                    <ul class="list-check-circle primary">
+                        <li>Simply dummy text of the Lorem Ipsum is printing and type setting. </li>
+                        <li>Dummy text of the printing and typesetting industry. Text of the printing</li>
+                        <li>And typesetting industry Lorem Ipsum has been. Ipsum has been the </li>
+                        <li>Industry's standard dummy since the 1500s, </li>
+                    </ul>
+                </div>
+            </div>
+        </div>        
+    </div>
+</div>
+<!-- SECTION CONTENT  END -->
+
+<!-- LATEST PROJECT SECTION START -->
+<div class="section-full bg-white p-tb80 scale-bg-top scale-bg-bottom">
+    <div class="container">
+        <div class="section-head text-center">        
+            <h2 class="text-uppercase ">DỰ ÁN</h2>    
+            <div class="wt-separator-outer">
+                <div class="wt-separator style-square">
+                    <span class="separator-left bg-primary"></span>
+                    <span class="separator-right bg-primary"></span>
+                </div>
+            </div>            
+            <div class="filter-wrap center">
+                <ul class="masonry-filter link-style  text-uppercase">
+                    <li class="active">
+                        <a data-filter="*" href="#"><span> Tất cả</span></a>
+                    </li>
+                    <li>
+                        <a data-filter=".cat-1" href="#">Dự án đã thực hiện</a>
+                    </li>
+                    <li>
+                        <a data-filter=".cat-2" href="#">Dự án đang thực hiện</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="portfolio-wrap mfp-gallery no-col-gap">
+                <% (0..2).each do |project| %>
+                    <!-- COLUMNS 1 --> 
+                    <div class="masonry-item cat-1 col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                        <div class="wt-gallery-bx">
+                            <div class="wt-thum-bx wt-img-overlay1 wt-img-effect zoom-slow">
+                                <%= image_tag '/hoanmy/images/latest-projects/pic1.jpg', alt: '' %>
+                                <div class="overlay-bx">
+                                    <div class="overlay-icon">
+                                        <%= link_to '<i class="fa fa-external-link wt-icon-box-xs"></i>'.html_safe, '', title: '' %>
+                                        <%= link_to '<i class="fa fa-arrows-alt wt-icon-box-xs"></i>'.html_safe, '/hoanmy/images/latest-projects/pic1.jpg', title: '', class: 'mfp-link' %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- COLUMNS 2 --> 
+                    <div class="masonry-item cat-2 col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                        <div class="wt-gallery-bx">
+                            <div class="wt-thum-bx wt-img-overlay1 wt-img-effect zoom-slow wt-img-effect zoom">
+                                <%= image_tag '/hoanmy/images/latest-projects/pic2.jpg', alt: '' %>
+                                <div class="overlay-bx">
+                                    <div class="overlay-icon">
+                                        <%= link_to '<i class="fa fa-external-link wt-icon-box-xs"></i>'.html_safe, '', title: '' %>
+                                        <%= link_to '<i class="fa fa-arrows-alt wt-icon-box-xs"></i>'.html_safe, '/hoanmy/images/latest-projects/pic2.jpg', title: '', class: 'mfp-link' %>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- LATEST PROJECT SECTION END -->

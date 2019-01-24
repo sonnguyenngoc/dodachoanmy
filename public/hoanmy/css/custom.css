@@ -1,7 +1,7 @@
 /*===================================== 
 YOU CAN WRIGHT CUSTOME CSS 
 ======================================*/
-.widget {
+.widget, .section-head, h1, h2, h3, h4, h5, h6 {
 	margin-bottom: 15px;
 }
 .footer-bottom {
@@ -68,4 +68,7 @@ p.intro-footer {
 }
 .widget_categories ul li:before, .widget_archive ul li:before, .widget_meta ul li:before, .widget_pages ul li:before, .widget_recent_comments ul li:before, .widget_nav_menu ul li:before, .widget_useful_links ul li:before, .widget_recent_entries ul li:before, .widget_services ul li:before {
 	top: 13px;
+}
+.p-a23 {
+	padding: 23px;
 }
