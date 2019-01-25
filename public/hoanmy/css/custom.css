@@ -81,3 +81,18 @@ p.intro-footer {
 .about-com-pic-2 img {
 	width: auto;
 }
+.masonry-filter.link-style > li:after {
+	right: -14px;
+	font-weight: 600;
+	color: #666;
+}
+.wt-bnr-inr {
+	height: 150px;
+}
+.text-center.section-head p {
+	max-width: none;
+	text-align: justify;
+}
+.content-about-us p {
+	font-size: 18px;
+}

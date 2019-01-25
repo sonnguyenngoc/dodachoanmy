@@ -1,4 +1,27 @@
 <footer class="site-footer footer-dark">
+    <% if params[:controller] != "erp/hoanmy/frontend/home" && (params[:action] == "index") %>
+        <!-- COLL-TO ACTION START -->
+        <div class="call-to-action-wrap call-to-action-skew bg-primary bg-no-repeat" style="background-image:url(/hoanmy/images/background/bg-4.png);">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-sm-8">
+                        <div class="call-to-action-left p-tb20 p-r50">
+                            <h4 class="text-uppercase m-b10">We are ready to build your dream tell us more about your project</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse viverra mauris eget tortor.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="col-md-3">
+                        <div class="call-to-action-right p-tb30">
+                            <a href="contact-1.html" class="site-button-secondry  m-r15 text-uppercase font-weight-600">
+                                Contact us  <i class="fa fa-angle-double-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </div
+    <% end %>
     <!-- FOOTER BLOCKES START -->  
     <div class="footer-top overlay-wraper">
         <div class="overlay-main"></div>
@@ -21,11 +44,11 @@
                     <div class="widget widget_services">
                         <h4 class="widget-title">Liên Kết Nhanh</h4>
                         <ul>
-                            <li><a href="">Tư vấn đo đạc</a></li>
-                            <li><a href="">Thủ tục đất đai</a></li>
-                            <li><a href="">Dự án</a></li>
-                            <li><a href="">Thư viện ảnh</a></li>
-                            <li><a href="">Tin chuyên ngành</a></li>
+                            <li><%= link_to 'Tư vấn đo đạc', erp_hoanmy.consult_listing_path, title: 'Tư vấn đo đạc' %>></li>
+                            <li><%= link_to 'Thủ tục đất đai', erp_hoanmy.procedure_listing_path, title: 'Thủ tục đất đai' %></li>
+                            <li><%= link_to 'Dự án', erp_hoanmy.project_listing_path, title: '' %></li>
+                            <li><%= link_to 'Thư viện ảnh', erp_hoanmy.gallery_listing_path, title: 'Thư viện ảnh' %></li>
+                            <li><%= link_to 'Tin chuyên ngành', erp_hoanmy.blog_listing_path, title: '' %></li>
                         </ul>
                     </div>
                 </div>
@@ -34,9 +57,9 @@
                     <div class="widget widget_services">
                         <h4 class="widget-title">Thông Tin Website</h4>
                         <ul>
-                            <li><a href="about-1.html">Giới thiệu</a></li>
-                            <li><a href="faq-1.html">Liên hệ</a></li>
-                            <li><a href="career.html">Sitemap</a></li>
+                            <li><%= link_to 'Giới thiệu', erp_hoanmy.about_us_path, title: 'Giới thiệu' %></li>
+                            <li><%= link_to 'Liên hệ', erp_hoanmy.contact_us_path, title: 'Liên hệ' %></li>
+                            <li><%= link_to 'Sitemap', '', title: 'Sitemap' %></li>
                         </ul>
                     </div>
                     <!-- SOCIAL LINKS -->
@@ -62,7 +85,9 @@
                         </div>
                         <div class="icon-content">
                             <h5 class="wt-tilte text-uppercase m-b0">Địa chỉ</h5>
-                            <p><%= link_to '24 Nguyễn Đình Chiểu, Phường Phước Hiệp, TP. Bà Rịa, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam', '', title: '' %></p>
+                            <p><%= link_to '24 Nguyễn Đình Chiểu, Phường Phước Hiệp, TP. Bà Rịa, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam',
+                                            erp_hoanmy.contact_us_path,
+                                            title: '24 Nguyễn Đình Chiểu, Phường Phước Hiệp, TP. Bà Rịa, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam' %></p>
                         </div>
                    </div>
                 </div>
