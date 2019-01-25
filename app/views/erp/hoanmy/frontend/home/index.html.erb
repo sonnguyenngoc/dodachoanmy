@@ -25,24 +25,53 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-md-5 col-sm-5 col-xs-6 col-xs-100pc">
+            <div class="col-md-4 col-sm-4 col-xs-6 col-xs-100pc">
                 <div class="about-com-pic-2">
-                    <img src="hoanmy/images/surveyors-01.jpg" alt=""/>
+                    <%= image_tag '/hoanmy/images/surveyors-01.png', alt: '' %>
                 </div>
             </div>
-            <div class="col-md-7 col-sm-7 col-xs-12">
+            <div class="col-md-8 col-sm-8 col-xs-12">
                 <div class="about-types row">
-                    <% (0..3).each do |consult| %>
-                        <div class="col-md-6 col-sm-6 m-b30">
-                            <div class="wt-icon-box-wraper bx-style-1 p-a23 center bg-white">
-                                <div class="icon-lg text-primary m-b20">
+                    <% (0..2).each do |consult| %>
+                        <div class="col-md-4 col-sm-4 m-b20">
+                            <div class="wt-icon-box-wraper bx-style-1 p-a29 center bg-white">
+                                <div class="icon-lg text-primary m-b10">
                                     <span class="icon-cell text-primary">
-                                        <%= image_tag '/hoanmy/images/icon/home.png', alt: '' %>
+                                        <%= link_to (image_tag '/hoanmy/images/icon/icon-01.png', alt: ''), '', title: '' %>
                                     </span>
                                 </div>
                                 <div class="icon-content">
-                                    <h5 class="wt-tilte text-uppercase">Building</h5>
-                                    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod .</p>
+                                    <h5 class="wt-tilte">
+                                        <%= link_to 'Đo vẽ, thành lập bản đồ địa hình', '', title: '' %>                                        
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 m-b20">
+                            <div class="wt-icon-box-wraper bx-style-1 p-a29 center bg-white">
+                                <div class="icon-lg text-primary m-b10">
+                                    <span class="icon-cell text-primary">
+                                        <%= link_to (image_tag '/hoanmy/images/icon/icon-02.png', alt: ''), '', title: '' %>
+                                    </span>
+                                </div>
+                                <div class="icon-content">
+                                    <h5 class="wt-tilte">
+                                        <%= link_to 'Đo vẽ, thành lập bản đồ địa chính', '', title: '' %>
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-4 m-b20">
+                            <div class="wt-icon-box-wraper bx-style-1 p-a29 center bg-white">
+                                <div class="icon-lg text-primary m-b10">
+                                    <span class="icon-cell text-primary">
+                                        <%= link_to (image_tag '/hoanmy/images/icon/icon-03.png', alt: ''), '', title: '' %>
+                                    </span>
+                                </div>
+                                <div class="icon-content">
+                                    <h5 class="wt-tilte">
+                                        <%= link_to 'Đo đạc, cắm mốc xác định ranh giới khu đất', '', title: '' %>
+                                    </h5>
                                 </div>
                             </div>
                         </div>
@@ -101,8 +130,7 @@
             <div class="col-md-6  clearfix">
                 <div class="wt-box graph-tabing">
                     <div class="wt-accordion acc-bg-primary acc-has-bg" id="accordion6">
-                            <div class="panel wt-panel">
-                            
+                            <div class="panel wt-panel">                            
                                 <div class="acod-head acc-actives">
                                      <h6 class="acod-title text-uppercase">
                                         <a data-toggle="collapse" href="#collapseOne6" data-parent="#accordion6" >
@@ -110,12 +138,10 @@
                                             <span class="indicator"><i class="fa fa-plus"></i></span>
                                         </a>
                                      </h6>
-                                </div>
-                                
+                                </div>                                
                                 <div id="collapseOne6" class="acod-body collapse in">
-                                    <div class="acod-content p-tb15">Web design lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
-                                </div>
-                                
+                                    <div class="acod-content p-tb15 text-justify">Web design lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                                </div>                                
                             </div>
                             <div class="panel wt-panel">
                                 <div class="acod-head">
@@ -127,7 +153,7 @@
                                      </h6>
                                 </div>
                                 <div id="collapseTwo6" class="acod-body collapse">
-                                    <div class="acod-content p-tb15">Graphic design lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                                    <div class="acod-content p-tb15 text-justify">Graphic design lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
                                 </div>
                             </div>
                             <div class="panel wt-panel">
@@ -140,7 +166,7 @@
                                  </h6>
                                 </div>
                                 <div id="collapseThree6" class="acod-body collapse">
-                                    <div class="acod-content p-tb15">Developement lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                                    <div class="acod-content p-tb15 text-justify">Developement lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
                                 </div>
                             </div>
                             
@@ -154,7 +180,7 @@
                                  </h6>
                                 </div>
                                 <div id="collapseFour6" class="acod-body collapse">
-                                    <div class="acod-content p-tb15">Developement lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                                    <div class="acod-content p-tb15 text-justify">Developement lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
                                 </div>
                             </div>
                         </div>
@@ -162,15 +188,14 @@
             </div>
             <div class="col-md-6">
                 <div class="wt-box graph-part-right text-white">
-                    <strong class="text-uppercase title-first display-block">Construction</strong>
-                    <span class="text-uppercase text-primary display-block title-second">What are you looking for?</span>
-                    <p><strong>Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                     type and scrambled it to make a type specimen book.</strong></p>
+                    <strong class="text-uppercase title-first display-block">ĐO ĐẠC HOÀN MỸ</strong>
+                    <span class="text-uppercase text-primary display-block title-second">Lĩnh vực hoạt động</span>
+                    <p class="text-justify"><strong>Chúng tội chuyên về lĩnh vực đo đạc và bản đồ, thiết kế kiến trúc xây dựng công trình và quy hoạch đô thị.</strong></p>
                     <ul class="list-check-circle primary">
-                        <li>Simply dummy text of the Lorem Ipsum is printing and type setting. </li>
-                        <li>Dummy text of the printing and typesetting industry. Text of the printing</li>
-                        <li>And typesetting industry Lorem Ipsum has been. Ipsum has been the </li>
-                        <li>Industry's standard dummy since the 1500s, </li>
+                        <li>Máy móc, trang thiết bị đo đạc hiện đại.</li>
+                        <li>Đội ngũ Kỹ sư - Kiến trúc sư - Chuyên viên trong nghề với tay nghề cao.</li>
+                        <li>Đo đạc - Định vị - Thiết kế - Quy hoạch phân lô theo yêu cầu.</li>
+                        <li>Miễn phí tư vấn thủ tục đất đai. Kiểm tra & chia sẽ thông tin quy hoạch cơ bản.</li>
                     </ul>
                 </div>
             </div>
@@ -183,7 +208,7 @@
 <div class="section-full bg-white p-tb80 scale-bg-top scale-bg-bottom">
     <div class="container">
         <div class="section-head text-center">        
-            <h2 class="text-uppercase ">DỰ ÁN</h2>    
+            <h2 class="text-uppercase ">DỰ ÁN THỰC HIỆN</h2>    
             <div class="wt-separator-outer">
                 <div class="wt-separator style-square">
                     <span class="separator-left bg-primary"></span>
