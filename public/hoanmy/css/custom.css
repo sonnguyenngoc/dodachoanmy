@@ -1,6 +1,9 @@
 /*===================================== 
 YOU CAN WRIGHT CUSTOME CSS 
 ======================================*/
+body, .header-nav .nav > li > a, .site-footer p, .site-footer li {
+	font-size: 16px;
+}
 .widget, .section-head, h1, h2, h3, h4, h5, h6 {
 	margin-bottom: 15px;
 }
@@ -33,9 +36,6 @@ YOU CAN WRIGHT CUSTOME CSS
 }
 .site-button, .site-button-secondry {
 	line-height: 1.3;
-}
-.site-footer p, .site-footer li {
-	font-size: 14px;
 }
 .logo-footer {
 	margin-top: 5px;
@@ -93,6 +93,6 @@ p.intro-footer {
 	max-width: none;
 	text-align: justify;
 }
-.content-about-us p {
-	font-size: 18px;
+.footer-dark .footer-top p a {
+	font-size: 13px;
 }
