@@ -1,0 +1,82 @@
+<!-- INNER PAGE BANNER -->
+<div class="wt-bnr-inr overlay-wraper" style="background-image:url(/hoanmy/images/background/breadcrumb-banner.png);">
+    <div class="overlay-main bg-black opacity-07"></div>
+    <div class="container">
+        <div class="wt-bnr-inr-entry">
+            <h1 class="text-white">Thủ Tục Đất Đai</h1>
+        </div>
+    </div>
+</div>
+<!-- INNER PAGE BANNER END -->
+<!-- BREADCRUMB ROW -->                            
+<div class="bg-gray-light p-tb15">
+    <div class="container">
+        <ul class="wt-breadcrumb breadcrumb-style-2">
+            <li>
+                <%= link_to '<i class="fa fa-home"></i> Trang Chủ'.html_safe, erp_hoanmy.root_path, title: 'Quay về trang chủ' %>
+            </li>
+            <li>Thủ Tục Đất Đai</li>
+        </ul>
+    </div>
+</div>
+<!-- BREADCRUMB ROW END -->
+<!-- SECTION START  -->
+<div class="section-full  p-t20 p-b20 bg-gray">
+    <div class="container">
+        <div class="section-head text-center">
+            <h2 class="text-uppercase">Thủ Tục Đất Đai</h2>
+            <div class="wt-separator-outer">
+                <div class="wt-separator style-square">
+                    <span class="separator-left bg-primary"></span>
+                    <span class="separator-right bg-primary"></span>
+                </div>
+            </div>            
+        </div>
+        <div class="section-content no-col-gap">
+            <div class="row">
+                <% (0..3).each do |procedure| %>
+                <div class="col-md-4 col-sm-6 animate_line">
+                    <a href="<%=  %>" title="">
+                        <div class="wt-icon-box-wraper  p-a20 center bg-white m-a5">
+                            <div class="icon-sm text-primary m-b20">
+                                <i class="fa fa-gavel icon-cell" aria-hidden="true"></i>
+                            </div>
+                            <div class="icon-content">
+                                <h5 class="wt-tilte text-uppercase">Thủ Tục</h5>
+                                <p>Cấp giấy chứng nhận quyền sử dụng đất</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 animate_line">
+                    <a href="<%=  %>" title="">
+                        <div class="wt-icon-box-wraper  p-a20 center bg-white m-a5">
+                            <div class="icon-sm text-primary m-b20">
+                                <i class="fa fa-gavel icon-cell" aria-hidden="true"></i>
+                            </div>
+                            <div class="icon-content">
+                                <h5 class="wt-tilte text-uppercase">Thủ Tục</h5>
+                                <p>Chuyển nhượng - Thừa kế - Tặng cho</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-md-4 col-sm-6 animate_line">
+                    <a href="<%=  %>" title="">
+                        <div class="wt-icon-box-wraper  p-a20 center bg-white m-a5">
+                            <div class="icon-sm text-primary m-b20">
+                                <i class="fa fa-gavel icon-cell" aria-hidden="true"></i>
+                            </div>
+                            <div class="icon-content">
+                                <h5 class="wt-tilte text-uppercase">Thủ Tục</h5>
+                                <p>Phân lô tách thửa cấp giấy chứng nhận quyền sử dụng đất</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- SECTION END -->

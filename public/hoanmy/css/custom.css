@@ -96,3 +96,12 @@ p.intro-footer {
 .footer-dark .footer-top p a {
 	font-size: 13px;
 }
+.animate_line a p {
+	color: #000;
+}
+.icon-content p {
+	word-break: normal;
+}
+.wt-icon-box-wraper.center {
+	min-height: 200px;
+}
