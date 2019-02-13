@@ -1,0 +1,42 @@
+<aside class="side-bar">
+    <div class="widget bg-white  recent-posts-entry">
+        <h4 class="widget-title">TƯ VẤN - KHẢO SÁT ĐO ĐẠC</h4>
+        <div class="section-content">
+            <div class="wt-tabs tabs-default border">
+                <div class="tab-content">                                    
+                    <div class="tab-pane active">
+                        <div class="widget-post-bx">
+                            <% (0..8).each do |blog| %>
+                                <div class="widget-post clearfix bg-gray">
+                                    <div class="wt-post-media">
+                                        <%= link_to image_tag('/hoanmy/images/blog/grid/pic1.jpg', alt: ''), erp_hoanmy.blog_detail_path, title: '' %>
+                                    </div>
+                                    <div class="wt-post-info">
+                                        <div class="wt-post-header">
+                                            <h6 class="post-title">
+                                                <%= link_to 'Đo đạc, cắm mốc xác định ranh giới khu đất', erp_hoanmy.blog_detail_path, title: '' %>
+                                            </h6>
+                                        </div>
+                                    </div>
+                                </div>
+                            <% end %>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="widget widget_gallery mfp-gallery">
+        <h4 class="widget-title">THƯ VIỆN ẢNH</h4>
+        <ul>
+            <% (0..11).each do |gallery| %>
+                <li>
+                    <div class="wt-post-thum">
+                        <%= link_to image_tag('/hoanmy/images/latest-projects/pic1-small.jpg', alt: ''),
+                                    '/hoanmy/images/latest-projects/pic1-large.jpg', title: '', class: 'mfp-link' %>
+                    </div>
+                </li>
+            <% end %>
+        </ul>                       
+    </div>
+</aside>

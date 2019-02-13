@@ -16,6 +16,4 @@ Erp::Hoanmy::Engine.routes.draw do
   get "tin-chuyen-nganh/chi-tiet.html" => "frontend/blog#detail", as: :blog_detail
   
   get "gioi-thieu.html" => "frontend/information#about_us", as: :about_us
-  get "lien-he.html" => "frontend/information#contact_us", as: :contact_us
-  get "cau-hoi-thuong-gap.html" => "frontend/information#faq", as: :faq
 end

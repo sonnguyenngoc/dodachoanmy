@@ -114,6 +114,9 @@ p.intro-footer {
 .consult .wt-icon-box-wraper.center .icon-sm, .procedure .wt-icon-box-wraper.center .icon-sm {
 	width: 100%;
 }
-.portfolio-wrap h4, .portfolio-wrap p {
+.portfolio-wrap h4, .portfolio-wrap p, .blog-post {
 	margin-bottom: 10px;
+}
+.widget_gallery li {
+	width: 32.3%;
 }
