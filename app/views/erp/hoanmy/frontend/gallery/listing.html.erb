@@ -1,4 +1,3 @@
-<!-- INNER PAGE BANNER -->
 <div class="wt-bnr-inr overlay-wraper" style="background-image:url(/hoanmy/images/background/breadcrumb-banner.png);">
     <div class="overlay-main bg-black opacity-07"></div>
     <div class="container">
@@ -6,9 +5,7 @@
             <h1 class="text-white">THƯ VIỆN ẢNH</h1>
         </div>
     </div>
-</div>
-<!-- INNER PAGE BANNER END -->
-<!-- BREADCRUMB ROW -->                            
+</div>                       
 <div class="bg-gray-light p-tb15">
     <div class="container">
         <ul class="wt-breadcrumb breadcrumb-style-2">
@@ -19,36 +16,59 @@
         </ul>
     </div>
 </div>
-<!-- BREADCRUMB ROW END -->
-<!-- SECTION CONTENT START -->
-<div class="section-full p-t80 p-b50">
+<div class="section-full p-t20 p-b20">
     <div class="container">
+        <div class="section-head text-center">
+            <h2 class="text-uppercase">Thư Viện Ảnh</h2>
+            <div class="wt-separator-outer">
+                <div class="wt-separator style-square">
+                    <span class="separator-left bg-primary"></span>
+                    <span class="separator-right bg-primary"></span>
+                </div>
+            </div>            
+        </div>
         <!-- PAGINATION TOP START -->
         <div class="filter-wrap p-tb15">
             <ul class="masonry-filter link-style  text-uppercase">
                 <li class="active"><a data-filter="*" href="javascript:void(0)">Tất cả</a></li>
-                <li><a data-filter=".cat-1" href="javascript:void(0)">House</a></li>
-                <li><a data-filter=".cat-2" href="javascript:void(0)">Building</a></li>
+                <li><a data-filter=".cat-1" href="javascript:void(0)">Tư Vấn Đo Đạc</a></li>
+                <li><a data-filter=".cat-2" href="javascript:void(0)">Thủ Tục Đất Đai</a></li>
             </ul>
         </div>
         <!-- PAGINATION END -->        
         <!-- GALLERY CONTENT START -->
         <div class="row">
             <div class="portfolio-wrap mfp-gallery no-col-gap">
-                <% (0..8).each do |gallery| %>
+                <% (0..5).each do |gallery| %>
                 <!-- COLUMNS 1 -->
                 <div class="masonry-item cat-1 col-lg-4 col-md-4 col-sm-6 col-xs-6">
                     <div class="wt-gallery-bx p-a15">
                         <div class="wt-thum-bx wt-img-overlay5 wt-img-effect blurr">
                             <a href="javascript:void(0);">
-                                <img src="images/latest-projects/pic1.jpg"  alt="">
+                                <%= image_tag '/hoanmy/images/latest-projects/pic1-small.jpg', alt: '' %>
                             </a>
                             <div class="overlay-bx">
                                 <div class="overlay-icon">
-                                    <a href="javascript:void(0);">
-                                        <i class="fa fa-external-link wt-icon-box-xs"></i>
+                                    <a href="/hoanmy/images/latest-projects/pic1-large.jpg" class="mfp-link">
+                                        <i class="fa fa-arrows-alt wt-icon-box-xs"></i>
                                     </a>
-                                    <a href="images/gallery/pic1.jpg" class="mfp-link">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% end %>
+                <% (0..5).each do |gallery| %>
+                <!-- COLUMNS 1 -->
+                <div class="masonry-item cat-2 col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                    <div class="wt-gallery-bx p-a15">
+                        <div class="wt-thum-bx wt-img-overlay5 wt-img-effect blurr">
+                            <a href="javascript:void(0);">
+                                <%= image_tag '/hoanmy/images/latest-projects/pic2-small.jpg', alt: '' %>
+                            </a>
+                            <div class="overlay-bx">
+                                <div class="overlay-icon">
+                                    <a href="/hoanmy/images/latest-projects/pic2-large.jpg" class="mfp-link">
                                         <i class="fa fa-arrows-alt wt-icon-box-xs"></i>
                                     </a>
                                 </div>

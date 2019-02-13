@@ -105,3 +105,15 @@ p.intro-footer {
 .wt-icon-box-wraper.center {
 	min-height: 200px;
 }
+.consult .wt-icon-box-wraper.center {
+	min-height: 220px;
+}
+.consult .wt-icon-box-wraper.center .icon-sm img, .procedure .wt-icon-box-wraper.center .icon-sm img {
+	height: 60px;
+}
+.consult .wt-icon-box-wraper.center .icon-sm, .procedure .wt-icon-box-wraper.center .icon-sm {
+	width: 100%;
+}
+.portfolio-wrap h4, .portfolio-wrap p {
+	margin-bottom: 10px;
+}

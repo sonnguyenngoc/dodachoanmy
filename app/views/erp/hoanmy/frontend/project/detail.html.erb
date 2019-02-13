@@ -1,0 +1,131 @@
+<div class="wt-bnr-inr overlay-wraper" style="background-image:url(/hoanmy/images/background/breadcrumb-banner.png);">
+    <div class="overlay-main bg-black opacity-07"></div>
+    <div class="container">
+        <div class="wt-bnr-inr-entry">
+            <h1 class="text-white">Hoàn Mỹ Surveyors</h1>
+        </div>
+    </div>
+</div>                       
+<div class="bg-gray-light p-tb15">
+    <div class="container">
+        <ul class="wt-breadcrumb breadcrumb-style-2">
+            <li>
+                <%= link_to '<i class="fa fa-home"></i> Trang Chủ'.html_safe, erp_hoanmy.root_path, title: 'Quay về trang chủ' %>
+            </li>
+            <li>
+                <%= link_to 'Dự Án Thực Hiện', erp_hoanmy.project_listing_path, title: 'Dự Án Thực Hiện' %>
+            </li>
+            <li>Hoàn Mỹ Surveyors</li>
+        </ul>
+    </div>
+</div>
+<div class="section-full p-t20">
+    <div class="container">
+        <div class="section-head text-center">
+            <h2 class="text-uppercase">Hoàn Mỹ Surveyors</h2>
+            <div class="wt-separator-outer">
+                <div class="wt-separator style-square">
+                    <span class="separator-left bg-primary"></span>
+                    <span class="separator-right bg-primary"></span>
+                </div>
+            </div>            
+        </div>
+        <div class="row"> 
+            <div class="col-md-7 col-sm-7">
+                <!--Fade slider-->
+                <div class="owl-carousel about-us-carousel owl-btn-vertical-center owl-dots-bottom-center">
+                    <div class="item">
+                        <div class="aon-thum-bx">
+                            <img src="/hoanmy/images/latest-projects/pic1-large.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="aon-thum-bx">
+                            <img src="/hoanmy/images/latest-projects/pic2-large.jpg" alt="">
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="aon-thum-bx">
+                            <img src="/hoanmy/images/latest-projects/pic1-large.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <!--fade slider END-->                        	
+            </div>
+            <div class="col-md-5 col-sm-5">
+                <div class="text-justify">
+                    <h2 class="text-uppercase">Mô Tả Dự Án</h2>
+                    <div class="project-detail-content text-justify">
+                        <p>
+                            <strong>Công trình: </strong>Lập bản đồ đia chính tỷ lệ 1/500 phục vụ tách thửa cấp giấy CNQSD đất và hoàn thiện thủ tục cấp giấy chứng nhận quyền sử dụng đất cho 111 thửa đất.
+                            <br><strong>Công việc: </strong> Đo đạc lập bản đồ hiện trạng công trình.
+                            <br><strong>Quy mô: </strong> 10.000 m2
+                        </p>
+                    </div>
+                </div>
+            </div>                        
+        </div>
+    </div>
+</div>
+
+<div class="section-full p-t20 p-b20">
+    <div class="container ">
+      <div class="product-block p-a20 text-white bg-black-light">
+          <div class="row">
+              <div class="col-md-2 col-sm-6">
+                <h5>NGÀY BẮT ĐẦU</h5>
+                <p>09/2018</p>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <h5>CHỦ ĐẦU TƯ</h5>
+                <p>Công Ty TNHH Đầu Tư Dịch Vụ Xây Dựng Hoàn Mỹ</p>
+            </div>
+            <div class="col-md-4 col-sm-6">
+                <h5>ĐỊA CHỈ</h5>
+                <p>24 Nguyễn Đình Chiểu, Phường Phước Hiệp, TP. Bà Rịa, Tỉnh Bà Rịa - Vũng Tàu, Việt Nam</p>
+            </div>
+            <div class="col-md-2 col-sm-6">
+                <h5>TÌNH TRẠNG</h5>
+                <p>Đã hoàn thành</p>
+            </div>
+          </div>
+        </div>  
+    </div>
+</div>    
+<!-- SECTION CONTENT START -->         
+<div class="section-full bg-white p-b20">
+    <div class="container">
+        <div class="section-head">
+            <h2 class="text-uppercase">Dự Án Khác</h2>
+            <div class="wt-separator-outer">
+                <div class="wt-separator style-square">
+                    <span class="separator-left bg-primary"></span>
+                    <span class="separator-right bg-primary"></span>
+                </div>
+            </div>
+        </div>
+        <div class="section-content">
+            <div class="owl-carousel portfolio-carousel-nogap mfp-gallery gallery owl-btn-vertical-center">
+                <% (0..5).each do |project| %>
+                <div class="item">
+                    <div class="ow-portfolio">
+                        <div class="ow-portfolio-img wt-img-overlay1 wt-img-effect zoom-slow">
+                            <%= image_tag '/hoanmy/images/latest-projects/pic1-small.jpg', alt: '' %>
+                            <div class="overlay-bx">
+                                <div class="overlay-icon">
+                                    <a href="/hoanmy/images/latest-projects/pic1-large.jpg"  class="mfp-link">
+                                        <i class="fa fa-search-plus wt-icon-box-xs"></i>
+                                    </a>
+                                    <a href="<%= erp_hoanmy.project_detail_path %>">
+                                        <i class="fa fa-external-link wt-icon-box-xs"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% end %>
+            </div>
+        </div>
+    </div>
+</div>
