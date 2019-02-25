@@ -16,6 +16,7 @@
         </ul>
     </div>
 </div>
+
 <div class="section-full p-t20 p-b20">
     <div class="container">
         <div class="section-head text-center">
@@ -27,59 +28,43 @@
                 </div>
             </div>            
         </div>
-        <!-- PAGINATION TOP START -->
-        <div class="filter-wrap p-tb15">
-            <ul class="masonry-filter link-style  text-uppercase">
-                <li class="active"><a data-filter="*" href="javascript:void(0)">Tất cả</a></li>
-                <li><a data-filter=".cat-1" href="javascript:void(0)">Tư Vấn Đo Đạc</a></li>
-                <li><a data-filter=".cat-2" href="javascript:void(0)">Thủ Tục Đất Đai</a></li>
-            </ul>
-        </div>
-        <!-- PAGINATION END -->        
-        <!-- GALLERY CONTENT START -->
-        <div class="row">
-            <div class="portfolio-wrap mfp-gallery no-col-gap">
-                <% (0..5).each do |gallery| %>
-                <!-- COLUMNS 1 -->
-                <div class="masonry-item cat-1 col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                    <div class="wt-gallery-bx p-a15">
-                        <div class="wt-thum-bx wt-img-overlay5 wt-img-effect blurr">
-                            <a href="javascript:void(0);">
-                                <%= image_tag '/hoanmy/images/latest-projects/pic1-small.jpg', alt: '' %>
-                            </a>
-                            <div class="overlay-bx">
-                                <div class="overlay-icon">
-                                    <a href="/hoanmy/images/latest-projects/pic1-large.jpg" class="mfp-link">
-                                        <i class="fa fa-arrows-alt wt-icon-box-xs"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <% end %>
-                <% (0..5).each do |gallery| %>
-                <!-- COLUMNS 1 -->
-                <div class="masonry-item cat-2 col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                    <div class="wt-gallery-bx p-a15">
-                        <div class="wt-thum-bx wt-img-overlay5 wt-img-effect blurr">
-                            <a href="javascript:void(0);">
-                                <%= image_tag '/hoanmy/images/latest-projects/pic2-small.jpg', alt: '' %>
-                            </a>
-                            <div class="overlay-bx">
-                                <div class="overlay-icon">
-                                    <a href="/hoanmy/images/latest-projects/pic2-large.jpg" class="mfp-link">
-                                        <i class="fa fa-arrows-alt wt-icon-box-xs"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <% end %>
+        <% if @galleries.count > 0 %>
+            <div class="filter-wrap p-tb15">
+                <ul class="masonry-filter link-style  text-uppercase">
+                    <li class="active"><a data-filter="*" href="javascript:void(0)">Tất cả</a></li>
+                    <% @galleries.each do |gallery| %>
+                        <li><a data-filter=".gallery-<%= gallery.id %>" href="javascript:void(0)"><%= gallery.name %></a></li>
+                    <% end %>
+                </ul>
             </div>
-        </div>
-        <!-- GALLERY CONTENT END -->
+            <div class="row">
+                <div class="portfolio-wrap mfp-gallery no-col-gap">
+                    <% @galleries.each do |gallery| %>
+                        <% gallery.gallery_images.each do |gallery_image| %>
+                            <div class="masonry-item gallery-<%= gallery.id %> col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                                <div class="wt-gallery-bx p-a15">
+                                    <div class="wt-thum-bx wt-img-overlay5 wt-img-effect blurr">
+                                        <a href="javascript:void(0);">
+                                            <%= image_tag gallery_image.image_url.medium, alt: gallery.name %>
+                                        </a>
+                                        <div class="overlay-bx">
+                                            <div class="overlay-icon">
+                                                <a href="<%= gallery_image.image_url.large %>" class="mfp-link">
+                                                    <i class="fa fa-arrows-alt wt-icon-box-xs"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <% end %>
+                    <% end %>
+                </div>
+            </div>
+        <% else %>
+            <div class="alert alert-warning">
+                <strong>Thông báo: </strong>Nội dung thư viện ảnh đang được Hoàn Mỹ Surveyors cập nhật.
+            </div>
+        <% end %>
     </div>
 </div>
-<!-- SECTION CONTENT END -->

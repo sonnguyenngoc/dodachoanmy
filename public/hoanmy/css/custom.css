@@ -21,7 +21,7 @@ body, .header-nav .nav > li > a, .site-footer p, .site-footer li {
 	font-weight: 600;
 	text-transform: uppercase;
 }
-.header-info .icon-content a, body {
+.header-info .icon-content a, body, .acod-body {
 	color: #1a1a1a;
 }
 .header-info .icon-content a:hover {
@@ -46,6 +46,9 @@ body, .header-nav .nav > li > a, .site-footer p, .site-footer li {
 }
 button.scroltop span {
 	line-height: 15px;
+}
+.acod-body {
+	line-height: 25px;
 }
 @media only screen and (max-width: 480px) {
 	.logo-header {
@@ -89,6 +92,9 @@ p.intro-footer {
 .wt-bnr-inr {
 	height: 150px;
 }
+.section-head p {
+	font-size: 16px;
+}
 .text-center.section-head p {
 	max-width: none;
 	text-align: justify;
@@ -102,11 +108,14 @@ p.intro-footer {
 .icon-content p {
 	word-break: normal;
 }
-.wt-icon-box-wraper.center {
-	min-height: 200px;
+.blog-post {
+	min-height: 370px;
+}
+.procedure .wt-icon-box-wraper.center {
+	min-height: 240px;
 }
 .consult .wt-icon-box-wraper.center {
-	min-height: 220px;
+	min-height: 240px;
 }
 .consult .wt-icon-box-wraper.center .icon-sm img, .procedure .wt-icon-box-wraper.center .icon-sm img {
 	height: 60px;
@@ -119,4 +128,16 @@ p.intro-footer {
 }
 .widget_gallery li {
 	width: 32.3%;
+}
+.wt-post-title .post-title {
+	text-transform: capitalize;
+}
+.site-button-secondry {
+	border-radius: 5px;
+}
+a.site-button-secondry, a.site-button {
+	opacity: 0.8;
+}
+.alert-warning, .site-button {
+	border-radius: 5px;
 }

@@ -1,0 +1,22 @@
+<li class="nav-item <%= "active open" if ["erp/hoanmy/backend/projects"].include?(params[:controller]) %>">
+    <a href="javascript:;" class="nav-link nav-toggle">
+        <i class="fa fa-address-book"></i>
+        <span class="title">Dự án</span>
+        <% if ["erp/hoanmy/backend/projects"].include?(params[:controller]) %>
+            <span class="selected"></span>
+            <span class="arrow open"></span>
+        <% else %>
+            <span class="arrow"></span>
+        <% end %>
+    </a>
+    <ul class="sub-menu">
+        <li class="nav-item <%= "active open" if ["erp/hoanmy/backend/projects"].include?(params[:controller]) %>">
+            <a href="<%= erp_hoanmy.backend_projects_path %>" class="nav-link ">
+                <span class="title">Danh sách dự án</span>
+                <% if ["erp/hoanmy/backend/projects"].include?(params[:controller]) %>
+                <span class="selected"></span>
+                <% end %>
+            </a>
+        </li>
+    </ul>
+</li>

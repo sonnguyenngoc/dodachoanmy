@@ -27,54 +27,48 @@
                 </div>
             </div>            
         </div>
-        <div class="filter-wrap p-tb10">
-            <ul class="masonry-filter link-style  text-uppercase">
-                <li class="active"><a data-filter="*" href="#">Tất cả</a></li>
-                <li><a data-filter=".cat-1" href="javascript:void(0);">Dự án đang thực hiện</a></li>
-                <li><a data-filter=".cat-2" href="javascript:void(0);">Dự án đã hoàn thành</a></li>
-            </ul>
-        </div>
-        <div class="row">
-            <div class="portfolio-wrap mfp-gallery no-col-gap">
-                <% (0..5).each do |project| %>
-                <div class="masonry-item cat-1 col-lg-4 col-md-4 col-sm-6 col-xs-6 col-xs-100pc">
-                    <div class="wt-box p-a20">
-                        <div class="wt-thum-bx wt-img-effect zoom">
-                            <%= image_tag '/hoanmy/images/latest-projects/pic1-small.jpg', alt: '' %>
-                        </div>
-                        <div class="wt-info">
-                            <h4 class="wt-title m-t10">
-                                <a href="javascript:void(0);">Hoàn Mỹ Surveyors</a>
-                            </h4>
-                            <p class="text-justify">Đo đạc lập bản đồ hiện trạng công trình xây dựng trên đất....</p>
-                            <a href="<%= erp_hoanmy.project_detail_path %>" class="site-button ">
-                                Chi tiết dự án <i class="fa fa-angle-double-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <% end %>
-                <% (0..5).each do |project| %>
-                <div class="masonry-item cat-2 col-lg-4 col-md-4 col-sm-6 col-xs-6 col-xs-100pc">
-                    <div class="wt-box p-a20">
-                        <div class="wt-thum-bx wt-img-effect zoom">
-                            <%= image_tag '/hoanmy/images/latest-projects/pic1-small.jpg', alt: '' %>
-                        </div>
-                        <div class="wt-info">
-                            <h4 class="wt-title m-t10">
-                                <a href="javascript:void(0);">Hoàn Mỹ Surveyors</a>
-                            </h4>
-                            <p class="text-justify">Đo đạc lập bản đồ hiện trạng công trình xây dựng trên đất....</p>
-                            <a href="<%= erp_hoanmy.project_detail_path %>" class="site-button ">
-                                Chi tiết dự án <i class="fa fa-angle-double-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <% end %>
+        <% if @projects.count > 0 %>
+            <div class="filter-wrap p-tb10">
+                <ul class="masonry-filter link-style  text-uppercase">
+                    <li class="active"><a data-filter="*" href="#">Tất cả</a></li>
+                    <li><a data-filter=".project-processing" href="javascript:void(0);">Dự án đang thực hiện</a></li>
+                    <li><a data-filter=".project-completed" href="javascript:void(0);">Dự án đã hoàn thành</a></li>
+                </ul>
             </div>
-        </div>
-        <!-- GALLERY END -->
+            <div class="row">
+                <div class="portfolio-wrap mfp-gallery no-col-gap">
+                    <% @projects.each do |project| %>
+                    <div class="masonry-item project-<%= project.status %> col-lg-4 col-md-4 col-sm-6 col-xs-6 col-xs-100pc">
+                        <a href="<%= erp_hoanmy.project_detail_path(project_id: project.id, title: project.alias) %>">
+                            <div class="wt-box p-a20">
+                                <div class="wt-thum-bx wt-img-effect zoom">
+                                    <% if project.get_first_image.present? %>
+                                        <%= image_tag project.get_first_image.medium, alt: project.name %>
+                                    <% else %>
+                                        <%= image_tag '/hoanmy/images/no-img.png', alt: project.name %>
+                                    <% end %>
+                                </div>
+                                <div class="wt-info">
+                                    <h4 class="wt-title m-t10">
+                                        <a href="<%= erp_hoanmy.project_detail_path(project_id: project.id, title: project.alias) %>">
+                                            <%= truncate(strip_tags(project.name), length: 40) %>
+                                        </a>
+                                    </h4>
+                                    <p class="text-justify"><%= truncate(strip_tags(project.content.html_safe), length: 40) %></p>
+                                    <a href="<%= erp_hoanmy.project_detail_path(project_id: project.id, title: project.alias) %>" class="site-button ">
+                                        Chi tiết dự án <i class="fa fa-angle-double-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <% end %>                
+                </div>
+            </div>
+         <% else %>
+            <div class="alert alert-warning">
+                <strong>Thông báo: </strong>Nội dung dự án thực hiện đang được Hoàn Mỹ Surveyors cập nhật.
+            </div>
+        <% end %>
     </div>
 </div>
-<!-- SECTION CONTENT END  -->

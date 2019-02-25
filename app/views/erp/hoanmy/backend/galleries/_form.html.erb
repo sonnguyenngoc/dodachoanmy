@@ -1,0 +1,58 @@
+<%= form_for([erp_hoanmy, :backend, gallery], html: {multipart: true}) do |f| %>
+    <div class="form-body">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="portlet light bordered">
+                    <div class="portlet-body form">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <%= erp_form_control("text", {
+                                    name: 'gallery[name]',
+                                    value: gallery.name,
+                                    label: t('.name'),
+                                    placeholder: t('.placeholder_name'),
+                                    required: true,
+                                    errors: gallery.errors.full_messages_for(:name)
+                                }) %>
+                                <%= erp_form_control("textarea", {
+                                    name: 'gallery[description]',
+                                    value: gallery.description,
+                                    label: t('.description'),
+                                    placeholder: t('.placeholder_description')
+                                }) %>
+                            </div>
+                            <div class="col-md-7">
+                                <%= erp_form_control("images", {
+                                    name: 'gallery[gallery_images_attributes][__index__][image_url]',
+                                    name_cache: 'gallery[gallery_images_attributes][__index__][image_url_cache]',
+                                    id_name: 'gallery[gallery_images_attributes][__index__][id]',
+                                    destroy_name: 'gallery[gallery_images_attributes][__index__][_destroy]',
+                                    label: t('.images'),
+                                    width: 122,
+                                    height: 122,
+                                    images: @gallery.gallery_images,
+                                    origin_attribute: 'image_url',
+                                    image_attribute: 'image_url.small',
+                                    image_thumb: :small,
+                                    hidden_params: [
+                                        {name: 'gallery[gallery_images_attributes][__index__][gallery_id]', value: @gallery.id}
+                                    ]
+                                }) %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>        
+    </div>
+    
+    <%= erp_component('button/save', {
+        text: t('submit')
+    }) %>
+    
+    <%= erp_component('button/cancel', {
+        text: t('cancel'),
+        href: erp_hoanmy.backend_galleries_path
+    }) %>
+    
+<% end %>

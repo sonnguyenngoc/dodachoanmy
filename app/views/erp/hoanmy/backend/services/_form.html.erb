@@ -1,0 +1,119 @@
+<%= form_for([erp_hoanmy, :backend, service], html: {multipart: true}) do |f| %>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="portlet light bordered">
+                <div class="portlet-body">
+                    <div class="row">
+                        <div class="col-md-2">
+                            <%= erp_form_control('image', {
+                                img_src: service.icon_url.system,
+                                name: 'service[icon_url]',
+                                width: 150,
+                                height: 150
+                            }) %>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-9">
+                                            <%= erp_form_control("text", {
+                                                name: 'service[name]',
+                                                value: service.name,                   
+                                                label: t('.name'),
+                                                placeholder: t('.placeholder_name'),
+                                                required: true,
+                                                errors: service.errors.full_messages_for(:name)
+                                            }) %>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <%= erp_form_control('checkbox', {
+                                                name: 'service[is_show]',
+                                                id: 'service_is_show',
+                                                value: service.is_show,
+                                                not_selected_value: 'false',
+                                                label: t('.is_show'),
+                                                options: [{value: 'true', text: t('.check_is_show')}]
+                                            }) %>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <%= erp_form_control("textarea", {
+                                        name: 'service[description]',
+                                        value: service.description,                   
+                                        label: t('.description'),
+                                        placeholder: t('.placeholder_description')
+                                    }) %>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <%= erp_form_control("text", {
+                                                name: 'service[show_name]',
+                                                value: service.show_name,                   
+                                                label: t('.show_name'),
+                                                placeholder: t('.placeholder_show_name'),
+                                                required: true,
+                                                errors: service.errors.full_messages_for(:show_name)
+                                            }) %>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <%= erp_form_control('select', {
+                                                label: t('.category'),
+                                                name: 'service[category]',
+                                                value: service.category,
+                                                options: Erp::Hoanmy::Service.get_service_category_options(),
+                                                required: true,
+                                                errors: service.errors.full_messages_for(:category)
+                                            }) %>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <%= erp_form_control("textarea", {
+                                name: 'service[meta_keywords]',
+                                value: service.meta_keywords,                   
+                                label: t('.meta_keywords'),
+                                placeholder: t('.placeholder_meta_keywords')
+                            }) %>
+                        </div>
+                        <div class="col-md-6">
+                            <%= erp_form_control("textarea", {
+                                name: 'service[meta_description]',
+                                value: service.meta_description,                   
+                                label: t('.meta_description'),
+                                placeholder: t('.placeholder_meta_description')
+                            }) %>
+                        </div>                      
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-12">
+            <div class="portlet light bordered">
+                <div class="portlet-body">
+                    <%= erp_form_control("editor", {
+                        name: 'service[content]',
+                        value: service.content,
+                        label: t('.content'),
+                        placeholder: t('.placeholder_content'),
+                        rows: 5
+                    }) %>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <%= erp_component('button/save', {
+        text: t('submit')
+    }) %>
+    <%= erp_component('button/cancel', {
+        text: t('cancel'),
+        href: erp_hoanmy.backend_services_path
+    }) %>
+<% end %>

@@ -1,0 +1,109 @@
+<table class="table table-advance table-hover table-striped table-checkable order-column">
+    <thead>
+        <tr>
+            <th width='1%'>
+                <%= erp_datalist_check_all %>
+            </th>
+            <% if get_columns(params).include?("name") %>
+                <th><%= t('.name') %></th>
+            <% end %>
+            <% if get_columns(params).include?("category") %>
+                <th><%= t('.category') %></th>
+            <% end %>
+            <% if get_columns(params).include?("is_show") %>
+                <th><%= t('.is_show') %></th>
+            <% end %>
+            <% if get_columns(params).include?("creator") %>
+                <th><%= t('creator') %></th>
+            <% end %>
+            <% if get_columns(params).include?("created_at") %>
+                <th><%= t('created_at') %></th>
+            <% end %>
+            <th width="7%" class="sortable text-nowrap" sort-by='erp_hoanmy_services.custom_order'>
+                <%= t('.custom_order') %>                
+            </th>
+            <th width="7%"><%= t('actions') %></th>
+        </tr>
+    </thead>
+    <tbody>
+        <% @services.each do |service| %>
+            <tr class="odd gradeX">
+                <td>
+                    <%= erp_datalist_check_row(id: service.id) %>
+                </td>
+                <% if get_columns(params).include?("name") %>
+                    <td><%= link_to service.name, erp_hoanmy.edit_backend_service_path(service), class: 'title' %></td>
+                <% end %>
+                <% if get_columns(params).include?("category") %>
+                    <td><%= t("."+service.category) %></td>
+                <% end %>
+                <% if get_columns(params).include?("is_show") %>
+                    <% if service.is_show == false %>
+                        <td><span class="label label-sm label-danger"><%= t('.show_false') %></span></td>
+                    <% else %>
+                        <td><span class="label label-sm label-success"><%= t('.show_true') %></span></td>
+                    <% end %>                    
+                <% end %>
+                <% if get_columns(params).include?("creator") %>
+                    <td>
+                        <%= erp_component('avatar', {
+                            user: service.creator
+                        }) %>
+                    </td>
+                <% end %>
+                <% if get_columns(params).include?("created_at") %>
+                    <td><%= service.created_at.strftime("%d/%m/%Y") %></td>
+                <% end %>
+                <td class="text-center text-semibold">
+                    <%= service.custom_order %>
+                    <% if params[:sort_by] == 'erp_hoanmy_services.custom_order' %>
+                        <a data-method="PUT"
+                            href="<%=
+                                params[:sort_direction] == 'asc' ?
+                                erp_hoanmy.move_up_backend_services_path(id: service) :
+                                erp_hoanmy.move_down_backend_service_path(id: service)
+                            %>"
+                            class="ajax-link">
+                            <i class="fa fa-caret-square-o-up icon-big"></i>
+                        </a>
+                        <a data-method="PUT"
+                            href="<%=
+                                params[:sort_direction] == 'asc' ?
+                                erp_hoanmy.move_down_backend_services_path(id: service) :
+                                erp_hoanmy.move_up_backend_services_path(id: service)
+                            %>"
+                            class="ajax-link">
+                            <i class="fa fa-caret-square-o-down icon-big"></i>
+                        </a>
+                    <% end %>
+                </td>
+                <td class="text-right">
+                    <%= erp_datalist_row_actions(
+                        [
+                            {
+                                text: '<i class="fa fa-edit"></i> '+t('edit'),
+                                href: erp_hoanmy.edit_backend_service_path(service)
+                            },
+                            {
+                                divider: true
+                            },
+                            {
+                                text: '<i class="fa fa-trash"></i> '+t('.delete'),
+                                url: erp_hoanmy.backend_service_path(service),
+                                data_method: 'DELETE',
+                                class: 'ajax-link',
+                                data_confirm: t('delete_confirm')
+                            }
+                        ]
+                    ) %>
+                </td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+
+<% if @services.empty? %>
+    <div class="datalist-empty-line"><%= t('.no_matching_records_found') %></div>
+<% end %>
+        
+<%= erp_datalist_pagination(@services) %>

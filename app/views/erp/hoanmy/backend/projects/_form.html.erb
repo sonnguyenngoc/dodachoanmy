@@ -1,0 +1,120 @@
+<%= form_for([erp_hoanmy, :backend, project], html: {multipart: true}) do |f| %>
+    <div class="form-body">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="portlet light bordered">
+                    <div class="portlet-body form">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <%= erp_form_control("text", {
+                                    name: 'project[name]',
+                                    value: project.name,
+                                    label: t('.name'),
+                                    placeholder: t('.placeholder_name'),
+                                    required: true,
+                                    errors: project.errors.full_messages_for(:name),
+                                }) %>
+                                <%= erp_form_control('select', {
+                                    label: t('.status'),
+                                    name: 'project[status]',
+                                    value: project.status,
+                                    options: Erp::Hoanmy::Project.get_project_status_options(),
+                                    required: true,
+                                    errors: project.errors.full_messages_for(:status)
+                                }) %>
+                            </div>
+                            <div class="col-md-7">
+                                <%= erp_form_control("images", {
+                                    name: 'project[project_images_attributes][__index__][image_url]',
+                                    name_cache: 'project[project_images_attributes][__index__][image_url_cache]',
+                                    id_name: 'project[project_images_attributes][__index__][id]',
+                                    destroy_name: 'project[project_images_attributes][__index__][_destroy]',
+                                    label: t('.images'),
+                                    width: 122,
+                                    height: 122,
+                                    images: @project.project_images,
+                                    origin_attribute: 'image_url',
+                                    image_attribute: 'image_url.small',
+                                    image_thumb: :small,
+                                    hidden_params: [
+                                        {name: 'project[project_images_attributes][__index__][project_id]', value: @project.id}
+                                    ]
+                                }) %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="portlet light bordered">
+                    <div class="portlet-body form">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <%= erp_form_control("date", {
+                                    name: 'project[start_time]',
+                                    value: project.start_time,
+                                    label: t('.start_time'),
+                                    placeholder: t('.choose_start_time')
+                                }) %>
+                            </div>
+                            <div class="col-md-5">
+                                <%= erp_form_control("text", {
+                                    name: 'project[investor]',
+                                    value: project.investor,
+                                    label: t('.investor'),
+                                    placeholder: t('.placeholder_investor')
+                                }) %>
+                            </div>
+                            <div class="col-md-4">
+                                <%= erp_form_control("text", {
+                                    name: 'project[address]',
+                                    value: project.address,
+                                    label: t('.address'),
+                                    placeholder: t('.placeholder_address')
+                                }) %>
+                            </div>                                                    
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <%= erp_form_control("editor", {
+                                    name: 'project[content]',
+                                    value: project.content,
+                                    label: t('.content'),
+                                    placeholder: t('.placeholder_content')
+                                }) %>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <%= erp_form_control("textarea", {
+                                    name: 'project[meta_keywords]',
+                                    value: project.meta_keywords,
+                                    label: t('.meta_keywords'),
+                                    placeholder: t('.placeholder_meta_keywords')
+                                }) %>
+                            </div>
+                            <div class="col-md-6">
+                                <%= erp_form_control("textarea", {
+                                    name: 'project[meta_description]',
+                                    value: project.meta_description,
+                                    label: t('.meta_description'),
+                                    placeholder: t('.placeholder_meta_description')
+                                }) %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <%= erp_component('button/save', {
+        text: t('submit')
+    }) %>
+    <%= erp_component('button/cancel', {
+        text: t('cancel'),
+        href: erp_hoanmy.backend_projects_path
+    }) %>
+<% end %>

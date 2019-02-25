@@ -1,0 +1,48 @@
+<% content_for :title do %>
+    <%= t('.blogs') %>
+<% end %>
+
+<% content_for :page_title do %>
+    <i class="fa fa-newspaper"></i> <%= t('.blogs') %>
+<% end %>
+
+<% content_for :page_toolbar do %>
+    <%= erp_component('button/create', {
+        text: t('.create'),
+        href: erp_hoanmy.new_backend_blog_path,
+        class: 'btn-noborder'
+    }) %>
+<% end %>
+
+<%= erp_datalist(
+    url: erp_hoanmy.list_backend_blogs_path,
+    keywords: [
+        {
+            text: t('.name'), name: 'erp_hoanmy_blogs.name'
+        },
+        {
+            text: t('.category'),
+            name: 'erp_hoanmy_blog_categories.name',
+            select: {
+                name: 'erp_hoanmy_blog_categories.id',
+                data_url: erp_hoanmy.dataselect_backend_blog_categories_path
+            }
+        }
+    ],
+    actions: [
+    ],
+    filters: [
+    ],
+    columns: [
+        {
+            text: t('.name'), name: 'name', value: true, checked: true
+        },
+        {
+            text: t('creator'), name: 'creator', value: true, checked: false
+        },
+        {
+            text: t('created_at'), name: 'created_at', value: true, checked: true
+        }
+    ],
+    sort: { sort_by: 'erp_hoanmy_blogs.created_at', sort_direction: 'desc' }
+) %>

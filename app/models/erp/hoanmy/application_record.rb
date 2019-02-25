@@ -1,0 +1,5 @@
+module Erp::Hoanmy
+  class ApplicationRecord < ActiveRecord::Base
+    self.abstract_class = true
+  end
+end

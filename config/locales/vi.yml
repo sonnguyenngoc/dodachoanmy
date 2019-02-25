@@ -1,0 +1,214 @@
+vi:
+  processing: 'Đang thực hiện'
+  completed: 'Đã hoàn thành'
+  consultant: 'Tư vấn đo đạc'
+  procedure: 'Thủ tục đất đai'
+  erp:
+    hoanmy:
+      backend:
+        services:
+          create:
+            success: 'Thêm lĩnh vực thành công'
+          update:
+            success: 'Cập nhật lĩnh vực thành công'
+          destroy:
+            success: 'Xóa lĩnh vực thành công'
+          index:
+            create: 'Thêm lĩnh vực mới'
+            name: 'Tên lĩnh vực'
+            services: 'Danh sách lĩnh vực'
+            is_show: 'Hiện ngoài trang chủ'
+            category: 'Loại lĩnh vực'
+            is_consultant: 'Tư vấn đo đạc'
+            is_procedure: 'Thủ tục đất đai'
+          list:
+            name: 'Tên lĩnh vực'
+            is_show: 'Hiện ngoài trang chủ'
+            category: 'Loại lĩnh vực'
+            show_false: 'Không sử dụng ngoài trang chủ'
+            show_true: 'Sử dụng ngoài trang chủ'
+            consultant: 'Tư vấn đo đạc'
+            procedure: 'Thủ tục đất đai'
+            delete: 'Xóa lĩnh vực'
+            custom_order: 'Sắp xếp'
+            no_matching_records_found: 'Danh sách lĩnh vực không được tìm thấy...'
+          new:
+            services: 'Danh sách lĩnh vực'
+            create: 'Thêm lĩnh vực mới'
+          edit:
+            services: 'Danh sách lĩnh vực'
+            create: 'Thêm lĩnh vực mới'
+          form:
+            name: 'Tên lĩnh vực'
+            placeholder_name: 'Nhập tên lĩnh vực...'
+            is_show: 'Hiện ngoài trang chủ'
+            check_is_show: 'Hiển thị'
+            category: 'Loại lĩnh vực'
+            meta_keywords: 'Từ khóa thẻ meta SEO'
+            placeholder_meta_keywords: 'Nhập từ khóa thẻ meta SEO...'
+            meta_description: 'Mô tả thẻ meta SEO'
+            placeholder_meta_description: 'Nhập mô tả thẻ meta SEO...'
+            content: 'Nội dung bài viết'
+            placeholder_content: 'Nhập nội dung bài viết...'
+            description: 'Mô tả ngắn cho lĩnh vực'
+            placeholder_description: 'Nhập mô tả ngắn cho lĩnh vực...'
+            show_name: 'Tên hiển thị ngoài trang chủ'
+            placeholder_show_name: 'Nhập tên hiển thị ngoài trang chủ...'
+        blogs:
+          create:
+            success: 'Thêm bài viết thành công'
+          update:
+            success: 'Cập nhật bài viết thành công'
+          destroy:
+            success: 'Xóa bài viết thành công'
+          index:
+            create: 'Thêm bài viết mới'
+            name: 'Tiêu đề bài viết'
+            category: 'Chuyên mục'
+            blogs: 'Danh sách bài viết'
+          list:
+            name: 'Tiêu đề bài viết'
+            delete: 'Xóa bài viết'
+            custom_order: 'Sắp xếp'
+            no_matching_records_found: 'Danh sách bài viết không được tìm thấy...'
+          new:
+            blogs: 'Danh sách bài viết'
+            create: 'Thêm bài viết mới'
+          edit:
+            blogs: 'Danh sách bài viết'
+            create: 'Thêm bài viết mới'
+          form:
+            name: 'Tiêu đề bài viết'
+            create: 'Thêm chuyên mục mới'
+            placeholder_name: 'Nhập tiêu đề bài viết...'
+            blog_category: 'Chuyên mục bài viết'
+            choose_blog_category: 'Chọn chuyên mục bài viết'
+            meta_keywords: 'Từ khóa thẻ meta SEO'
+            placeholder_meta_keywords: 'Nhập từ khóa thẻ meta SEO...'
+            meta_description: 'Mô tả thẻ meta SEO'
+            placeholder_meta_description: 'Nhập mô tả thẻ meta SEO...'
+            content: 'Nội dung bài viết'
+            placeholder_content: 'Nhập nội dung bài viết...'
+        blog_categories:
+          create:
+            success: 'Thêm chuyên mục thành công'
+          update:
+            success: 'Cập nhật chuyên mục thành công'
+          destroy:
+            success: 'Xóa chuyên mục thành công'
+          index:
+            create: "Thêm chuyên mục mới"
+            name: 'Tiêu đề chuyên mục'
+            parent_category: 'Chuyên mục cha'
+            blog_categories: 'Danh sách chuyên mục'
+          list:
+            name: 'Tiêu đề chuyên mục'
+            custom_order: 'Sắp xếp'
+            delete: 'Xóa chuyên mục'
+            no_matching_records_found: 'Danh sách chuyên mục bài viết không được tìm thấy...'
+          new:
+            blog_categories: 'Danh sách chuyên mục'
+            create: 'Thêm chuyên mục mới'
+          edit:
+            blog_categories: 'Danh sách chuyên mục'
+            create: 'Thêm chuyên mục mới'
+          form:
+            parent_category: 'Chuyên mục cha'
+            choose_parent_category: 'Lựa chọn chuyên mục cha'
+            name: 'Tiêu đề chuyên mục'
+            placeholder_name: 'Nhập tiêu đề chuyên mục...'
+            description: 'Mô tả chuyên mục'
+            placeholder_description: 'Nhập mô tả tên chuyên mục...'
+            new_blog_category: 'Thêm chuyên mục mới'
+        projects:
+          create:
+            success: 'Thêm dự án thành công'
+          update:
+            success: 'Cập nhật dự án thành công'
+          destroy:
+            success: 'Xóa dự án thành công'
+          index:
+            create: 'Thêm dự án mới'
+            name: 'Tên dự án'
+            projects: 'Danh sách dự án'
+            status: 'Tình trạng dự án'
+            investor: 'Chủ đầu tư'
+            address: 'Địa điểm thực hiện'
+            start_time: 'Ngày bắt đầu'
+            is_processing: 'Đang thực hiện'
+            is_completed: 'Đã hoàn thành'
+          list:
+            name: 'Tên dự án'
+            status: 'Tình trạng dự án'
+            investor: 'Chủ đầu tư'
+            address: 'Địa điểm thực hiện'
+            start_time: 'Ngày bắt đầu'
+            processing: 'Đang thực hiện'
+            completed: 'Đã hoàn thành'
+            delete: 'Xóa dự án'
+            custom_order: 'Sắp xếp'
+            no_matching_records_found: 'Danh sách dự án không được tìm thấy...'
+          new:
+            projects: 'Danh sách dự án'
+            create: 'Thêm dự án mới'
+          edit:
+            projects: 'Danh sách dự án'
+            create: 'Thêm dự án mới'
+          form:
+            images: 'Hình ảnh dự án'
+            name: 'Tên dự án'
+            placeholder_name: 'Nhập tên dự án...'
+            status: 'Tình trạng dự án'
+            investor: 'Chủ đầu tư'
+            placeholder_investor: 'Tên chủ đầu tư...'
+            start_time: 'Ngày bắt đầu'
+            choose_start_time: 'Chọn ngày bắt đầu...'
+            address: 'Địa điểm thực hiện'
+            placeholder_address: 'Nhập địa điểm thực hiện dự án...'
+            content: 'Mô tả dự án'
+            placeholder_content: 'Nhập mô tả dự án...'
+            meta_keywords: 'Từ khóa thẻ meta SEO'
+            placeholder_meta_keywords: 'Nhập từ khóa thẻ meta SEO...'
+            meta_description: 'Mô tả thẻ meta SEO'
+            placeholder_meta_description: 'Nhập mô tả thẻ meta SEO...'
+        galleries:
+          create:
+            success: 'Thêm hình ảnh hoạt động thành công'
+          update:
+            success: 'Cập nhật hình ảnh hoạt động thành công'
+          destroy:
+            success: 'Xóa hình ảnh hoạt động thành công'
+          index:
+            create: 'Thêm hình ảnh hoạt động mới'
+            name: 'Tên hình ảnh hoạt động'
+            galleries: 'Danh sách hình ảnh hoạt động'
+            description: 'Mô tả'
+          list:
+            name: 'Tên hình ảnh hoạt động'
+            description: 'Mô tả'
+            delete: 'Xóa hình ảnh hoạt động'
+            custom_order: 'Sắp xếp'
+            no_matching_records_found: 'Danh sách hình ảnh hoạt động không được tìm thấy...'
+          new:
+            galleries: 'Danh sách hình ảnh hoạt động'
+            create: 'Thêm hình ảnh hoạt động mới'
+          edit:
+            galleries: 'Danh sách hình ảnh hoạt động'
+            create: 'Thêm hình ảnh hoạt động mới'
+          form:
+            images: 'Hình ảnh hoạt động'
+            name: 'Tên hình ảnh hoạt động'
+            placeholder_name: 'Nhập tên hình ảnh hoạt động...'
+            description: 'Mô tả hình ảnh hoạt động'
+            placeholder_description: 'Nhập mô tả hình ảnh hoạt động...'
+  activerecord:
+    errors:
+      models:
+        erp/hoanmy/blog_category:
+          attributes:
+            name:
+              blank: 'không được để trống.'
+        erp/hoanmy/blog:
+          attributes:
+            name:
+              blank: 'không được để trống.'

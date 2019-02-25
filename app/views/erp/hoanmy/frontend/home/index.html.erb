@@ -1,92 +1,58 @@
-<!-- Slider -->
 <div class="main-slider style-two default-banner">
     <div class="tp-banner-container">
         <div class="tp-banner" >
-            <!-- START REVOLUTION SLIDER 5.4.1 -->
             <%= render "erp/hoanmy/frontend/modules/home/slider" %>
-            <!-- END REVOLUTION SLIDER -->
         </div>
     </div>
 </div>
-<!-- Slider END -->
-
-<!-- ABOUT COMPANY SECTION START -->
-<div class="section-full p-tb20 bg-gray">
-    <div class="container">
-        <div class="section-head text-center">
-            <h2 class="text-uppercase">TƯ VẤN - KHẢO SÁT ĐO ĐẠC</h2>
-            <div class="wt-separator-outer">
-                <div class="wt-separator style-square">
-                    <span class="separator-left bg-primary"></span>
-                    <span class="separator-right bg-primary"></span>
+<% if @consultant_services.count > 0 %>
+    <div class="section-full p-tb20 bg-gray">
+        <div class="container">
+            <div class="section-head text-center">
+                <h2 class="text-uppercase">TƯ VẤN - KHẢO SÁT ĐO ĐẠC</h2>
+                <div class="wt-separator-outer">
+                    <div class="wt-separator style-square">
+                        <span class="separator-left bg-primary"></span>
+                        <span class="separator-right bg-primary"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-4 col-xs-6 col-xs-100pc">
+                    <div class="about-com-pic-2">
+                        <%= image_tag '/hoanmy/images/surveyors-01.png', alt: 'Tư vấn và khảo sát đo đạc' %>
+                    </div>
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-12">
+                    <div class="about-types row">
+                        <% @consultant_services.each do |consult| %>
+                            <div class="col-md-4 col-sm-4 m-b20">
+                                <div class="wt-icon-box-wraper bx-style-1 p-a29 center bg-white">
+                                    <div class="icon-lg text-primary m-b10">
+                                        <span class="icon-cell text-primary">
+                                            <%= link_to (image_tag consult.icon_url.icon, alt: consult.show_name), erp_hoanmy.consult_listing_path, title: consult.show_name %>
+                                        </span>
+                                    </div>
+                                    <div class="icon-content">
+                                        <h5 class="wt-tilte">
+                                            <%= link_to consult.show_name, erp_hoanmy.consult_listing_path, title: consult.show_name %>                                        
+                                        </h5>
+                                    </div>
+                                </div>
+                            </div>                        
+                        <% end %>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-sm-4 col-xs-6 col-xs-100pc">
-                <div class="about-com-pic-2">
-                    <%= image_tag '/hoanmy/images/surveyors-01.png', alt: '' %>
-                </div>
-            </div>
-            <div class="col-md-8 col-sm-8 col-xs-12">
-                <div class="about-types row">
-                    <% (0..2).each do |consult| %>
-                        <div class="col-md-4 col-sm-4 m-b20">
-                            <div class="wt-icon-box-wraper bx-style-1 p-a29 center bg-white">
-                                <div class="icon-lg text-primary m-b10">
-                                    <span class="icon-cell text-primary">
-                                        <%= link_to (image_tag '/hoanmy/images/icon/icon-01.png', alt: ''), '', title: '' %>
-                                    </span>
-                                </div>
-                                <div class="icon-content">
-                                    <h5 class="wt-tilte">
-                                        <%= link_to 'Đo vẽ, thành lập bản đồ địa hình', '', title: '' %>                                        
-                                    </h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-4 m-b20">
-                            <div class="wt-icon-box-wraper bx-style-1 p-a29 center bg-white">
-                                <div class="icon-lg text-primary m-b10">
-                                    <span class="icon-cell text-primary">
-                                        <%= link_to (image_tag '/hoanmy/images/icon/icon-02.png', alt: ''), '', title: '' %>
-                                    </span>
-                                </div>
-                                <div class="icon-content">
-                                    <h5 class="wt-tilte">
-                                        <%= link_to 'Đo vẽ, thành lập bản đồ địa chính', '', title: '' %>
-                                    </h5>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-4 m-b20">
-                            <div class="wt-icon-box-wraper bx-style-1 p-a29 center bg-white">
-                                <div class="icon-lg text-primary m-b10">
-                                    <span class="icon-cell text-primary">
-                                        <%= link_to (image_tag '/hoanmy/images/icon/icon-03.png', alt: ''), '', title: '' %>
-                                    </span>
-                                </div>
-                                <div class="icon-content">
-                                    <h5 class="wt-tilte">
-                                        <%= link_to 'Đo đạc, cắm mốc xác định ranh giới khu đất', '', title: '' %>
-                                    </h5>
-                                </div>
-                            </div>
-                        </div>
-                    <% end %>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>   
-<!-- ABOUT COMPANY SECTION END -->
+<% end %>
             
-<!-- SERVICES START  -->         
+<% if @procedure_services.count > 2 %>       
 <div class="section-full bg-white p-t80 p-b50 scale-bg-top scale-bg-bottom">
     <div class="container">
-        <!-- TITLE START -->
         <div class="section-head text-center">
             <h2 class="text-uppercase">THỦ TỤC ĐẤT ĐAI</h2>
             <div class="wt-separator-outer">
@@ -96,23 +62,25 @@
               </div>
             </div>                
         </div>
-        <!-- TITLE END -->        
-        <!-- CAROUSEL -->
         <div class="section-content">
             <div class="owl-carousel Home-services-carousel owl-btn-vertical-center">
-                <% (0..6).each do |procedure| %>
+                <% @procedure_services.each do |procedure| %>
                     <div class="item">
                         <div class="wt-box bg-white">
                             <div class="wt-media">
-                                <%= link_to (image_tag '/hoanmy/images/our-work/pic1.jpg', alt: ''), '', title: '' %>
+                                <% if procedure.image_url.present? %>
+                                <%= link_to (image_tag procedure.image_url.icon, alt: procedure.show_name),
+                                            erp_hoanmy.procedure_listing_path, title: procedure.show_name %>
+                                <% else %>
+                                    <%= link_to (image_tag '/hoanmy/images/no-img.png', alt: procedure.show_name),
+                                            erp_hoanmy.procedure_listing_path, title: procedure.show_name %>
+                                <% end %>
                             </div>
                             <div class="wt-info p-tb10">
                                 <h4 class="wt-title m-t0 m-b5">
-                                    <%= link_to 'Tư vấn thủ tục đất đai', '', title: '' %>
+                                    <%= link_to procedure.show_name, erp_hoanmy.procedure_listing_path, title: procedure.show_name %>
                                 </h4>
-                                <p class="text-justify">
-                                    Thủ tục cấp giấy chứng nhận quyền sử dụng đất
-                                </p>
+                                <p class="text-justify"><%= procedure.description %></p>
                             </div>
                         </div>
                     </div>
@@ -121,9 +89,8 @@
         </div>
     </div>
 </div>
-<!-- SERVICES CONTENT END -->   
+<% end %>
 
-<!-- SECTION CONTENT START -->
 <div class="section-full  p-tb30 bg-no-repeat bg-cover " style="background-image:url(/hoanmy/images/background/bg5.jpg);">    
     <div class="container">        
         <div class="row">
@@ -210,9 +177,8 @@
         </div>        
     </div>
 </div>
-<!-- SECTION CONTENT  END -->
 
-<!-- LATEST PROJECT SECTION START -->
+<% if @projects.count > 0 %>
 <div class="section-full bg-white p-tb80 scale-bg-top scale-bg-bottom">
     <div class="container">
         <div class="section-head text-center">        
@@ -225,15 +191,9 @@
             </div>            
             <div class="filter-wrap center">
                 <ul class="masonry-filter link-style  text-uppercase">
-                    <li class="active">
-                        <a data-filter="*" href="#"><span> Tất cả</span></a>
-                    </li>
-                    <li>
-                        <a data-filter=".cat-1" href="#">Dự án đang thực hiện</a>
-                    </li>
-                    <li>
-                        <a data-filter=".cat-2" href="#">Dự án đã hoàn thành</a>
-                    </li>
+                    <li class="active"><a data-filter="*" href="#">Tất cả</a></li>
+                    <li><a data-filter=".project-processing" href="javascript:void(0);">Dự án đang thực hiện</a></li>
+                    <li><a data-filter=".project-completed" href="javascript:void(0);">Dự án đã hoàn thành</a></li>
                 </ul>
             </div>
         </div>
@@ -241,38 +201,24 @@
     <div class="container">
         <div class="row">
             <div class="portfolio-wrap mfp-gallery no-col-gap">
-                <% (0..2).each do |project| %>
-                    <!-- COLUMNS 1 --> 
-                    <div class="masonry-item cat-1 col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                        <div class="wt-gallery-bx">
-                            <div class="wt-thum-bx wt-img-overlay1 wt-img-effect zoom-slow">
-                                <%= image_tag '/hoanmy/images/latest-projects/pic1.jpg', alt: '' %>
-                                <div class="overlay-bx">
-                                    <div class="overlay-icon">
-                                        <%= link_to '<i class="fa fa-external-link wt-icon-box-xs"></i>'.html_safe, '', title: '' %>
-                                        <%= link_to '<i class="fa fa-arrows-alt wt-icon-box-xs"></i>'.html_safe, '/hoanmy/images/latest-projects/pic1.jpg', title: '', class: 'mfp-link' %>
+                <% @projects.each do |project| %>
+                    <div class="masonry-item project-<%= project.status %> col-lg-4 col-md-4 col-sm-6 col-xs-6">
+                        <a href="<%= erp_hoanmy.project_detail_path(project_id: project.id, title: project.alias) %>">
+                            <div class="wt-gallery-bx">
+                                <div class="wt-thum-bx wt-img-overlay1 wt-img-effect zoom-slow">
+                                    <%= image_tag project.project_images.first.image_url.medium, alt: project.name %>
+                                    <div class="overlay-bx">
+                                        <div class="overlay-icon">
+                                            <%= link_to '<i class="fa fa-external-link wt-icon-box-xs"></i>'.html_safe, erp_hoanmy.project_detail_path(project_id: project.id), title: project.name %>                                            
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <!-- COLUMNS 2 --> 
-                    <div class="masonry-item cat-2 col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                        <div class="wt-gallery-bx">
-                            <div class="wt-thum-bx wt-img-overlay1 wt-img-effect zoom-slow wt-img-effect zoom">
-                                <%= image_tag '/hoanmy/images/latest-projects/pic2.jpg', alt: '' %>
-                                <div class="overlay-bx">
-                                    <div class="overlay-icon">
-                                        <%= link_to '<i class="fa fa-external-link wt-icon-box-xs"></i>'.html_safe, '', title: '' %>
-                                        <%= link_to '<i class="fa fa-arrows-alt wt-icon-box-xs"></i>'.html_safe, '/hoanmy/images/latest-projects/pic2.jpg', title: '', class: 'mfp-link' %>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        </a>
+                    </div>                    
                 <% end %>
             </div>
         </div>
     </div>
 </div>
-<!-- LATEST PROJECT SECTION END -->
+<% end %>

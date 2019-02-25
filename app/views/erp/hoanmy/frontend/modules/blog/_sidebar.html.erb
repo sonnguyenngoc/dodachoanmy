@@ -1,42 +1,91 @@
 <aside class="side-bar">
-    <div class="widget bg-white  recent-posts-entry">
-        <h4 class="widget-title">TƯ VẤN - KHẢO SÁT ĐO ĐẠC</h4>
-        <div class="section-content">
-            <div class="wt-tabs tabs-default border">
-                <div class="tab-content">                                    
-                    <div class="tab-pane active">
-                        <div class="widget-post-bx">
-                            <% (0..8).each do |blog| %>
-                                <div class="widget-post clearfix bg-gray">
-                                    <div class="wt-post-media">
-                                        <%= link_to image_tag('/hoanmy/images/blog/grid/pic1.jpg', alt: ''), erp_hoanmy.blog_detail_path, title: '' %>
-                                    </div>
-                                    <div class="wt-post-info">
-                                        <div class="wt-post-header">
-                                            <h6 class="post-title">
-                                                <%= link_to 'Đo đạc, cắm mốc xác định ranh giới khu đất', erp_hoanmy.blog_detail_path, title: '' %>
-                                            </h6>
+    <% if @consultant_services.count > 0 %>
+        <div class="widget bg-white  recent-posts-entry">
+            <h4 class="widget-title">TƯ VẤN ĐO ĐẠC</h4>
+            <div class="section-content">
+                <div class="wt-tabs tabs-default border">
+                    <div class="tab-content">                                    
+                        <div class="tab-pane active">
+                            <div class="widget-post-bx">
+                                <% @consultant_services.each do |consultant| %>
+                                    <div class="widget-post clearfix bg-gray">
+                                        <div class="wt-post-media">
+                                            <% if consultant.image_url.present? %>
+                                                <%= link_to image_tag(consultant.image_url, alt: consultant.show_name),
+                                                    erp_hoanmy.consult_listing_path, title: consultant.show_name %>
+                                            <% else %>
+                                                <%= link_to image_tag('/hoanmy/images/no-img-small.png', alt: consultant.show_name),
+                                                    erp_hoanmy.consult_listing_path, title: consultant.show_name %>
+                                            <% end %>
+                                        </div>
+                                        <div class="wt-post-info">
+                                            <div class="wt-post-header">
+                                                <h6 class="post-title">
+                                                    <%= link_to consultant.show_name, erp_hoanmy.consult_listing_path, title: consultant.show_name %>
+                                                </h6>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            <% end %>
+                                <% end %>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="widget widget_gallery mfp-gallery">
-        <h4 class="widget-title">THƯ VIỆN ẢNH</h4>
-        <ul>
-            <% (0..11).each do |gallery| %>
-                <li>
-                    <div class="wt-post-thum">
-                        <%= link_to image_tag('/hoanmy/images/latest-projects/pic1-small.jpg', alt: ''),
-                                    '/hoanmy/images/latest-projects/pic1-large.jpg', title: '', class: 'mfp-link' %>
+    <% end %>
+
+    <% if @procedure_services.count > 0 %>
+        <div class="widget bg-white  recent-posts-entry">
+            <h4 class="widget-title">THỦ TỤC ĐẤT ĐAI</h4>
+            <div class="section-content">
+                <div class="wt-tabs tabs-default border">
+                    <div class="tab-content">                                    
+                        <div class="tab-pane active">
+                            <div class="widget-post-bx">
+                                <% @procedure_services.each do |procedure| %>
+                                    <div class="widget-post clearfix bg-gray">
+                                        <div class="wt-post-media">
+                                            <% if procedure.image_url.present? %>
+                                                <%= link_to image_tag(procedure.image_url, alt: procedure.show_name),
+                                                    erp_hoanmy.procedure_listing_path, title: procedure.show_name %>
+                                            <% else %>
+                                                <%= link_to image_tag('/hoanmy/images/no-img-small.png', alt: procedure.show_name),
+                                                    erp_hoanmy.procedure_listing_path, title: procedure.show_name %>
+                                            <% end %>
+                                        </div>
+                                        <div class="wt-post-info">
+                                            <div class="wt-post-header">
+                                                <h6 class="post-title">
+                                                    <%= link_to procedure.show_name, erp_hoanmy.procedure_listing_path, title: procedure.show_name %>
+                                                </h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <% end %>
+                            </div>
+                        </div>
                     </div>
-                </li>
-            <% end %>
-        </ul>                       
-    </div>
+                </div>
+            </div>
+        </div>
+    <% end %>
+    
+    <% @galleries.count > 0 %>
+        <div class="widget widget_gallery mfp-gallery">
+            <h4 class="widget-title">THƯ VIỆN ẢNH</h4>
+            <ul>
+                <% @galleries.each do |gallery| %>
+                    <% gallery.gallery_images.limit(3).each do |gallery_image| %>
+                        <li>
+                            <div class="wt-post-thum">
+                                <%= link_to image_tag(gallery_image.image_url.medium, alt: gallery.name),
+                                            erp_hoanmy.gallery_listing_path, title: gallery.name, class: 'mfp-link' %>
+                            </div>
+                        </li>
+                    <% end %>
+                <% end %>
+            </ul>                       
+        </div>
+    <% end %>
 </aside>

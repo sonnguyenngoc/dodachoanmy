@@ -1,0 +1,29 @@
+<% content_for :title do %>
+    <%= @blog.name %>
+<% end %>
+
+<% content_for :page_title do %>    
+    <a href="<%= erp_hoanmy.backend_blogs_path %>">
+    <i class="fa fa-newspaper"></i> <%= t('.blogs') %>
+    </a> / <%= @blog.name %>
+<% end %>
+
+<% content_for :page_toolbar do %>
+    <%= erp_component('button/create', {
+        text: t('.create'),
+        href: erp_hoanmy.new_backend_blog_path,
+        class: 'btn-noborder'
+    }) %>
+<% end %>
+
+<div class="row">
+    <div class="col-md-12">
+        <% if @blog.errors.any? %>
+            <%= erp_form_control("form_error_message") %>
+        <% end %>
+        
+        <!-- BEGIN SAMPLE FORM PORTLET-->
+        <%= render 'form', blog: @blog %>
+        <!-- END SAMPLE FORM PORTLET-->
+    </div>
+</div>
