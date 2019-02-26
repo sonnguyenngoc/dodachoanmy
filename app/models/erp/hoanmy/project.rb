@@ -9,6 +9,11 @@ module Erp::Hoanmy
     accepts_nested_attributes_for :project_images, :reject_if => lambda { |a| a[:image_url].blank? and a[:image_url_cache].blank? }, :allow_destroy => true
 		
 		after_create :create_alias
+		after_save :destroy_images_url_nil?
+		
+		def destroy_images_url_nil?
+			self.project_images.where(image_url: nil).destroy_all
+		end
     
     def create_alias
 			name = self.name
