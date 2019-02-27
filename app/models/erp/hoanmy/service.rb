@@ -67,22 +67,22 @@ module Erp::Hoanmy
     
     def self.get_home_consultant_services(params)
 			query = self.where(is_show: true).where(category: Erp::Hoanmy::Service::CONSULTANT)
-			query = query.order('erp_hoanmy_services.created_at DESC')
+			query = query.order('erp_hoanmy_services.custom_order ASC')
 		end
     
     def self.get_home_procedure_services(params)
 			query = self.where(is_show: true).where(category: Erp::Hoanmy::Service::PROCEDURE)
-			query = query.order('erp_hoanmy_services.created_at DESC')
+			query = query.order('erp_hoanmy_services.custom_order ASC')
 		end
     
     def self.get_consultant_services(params)
 			query = self.where(category: Erp::Hoanmy::Service::CONSULTANT)
-			query = query.order('erp_hoanmy_services.created_at DESC')
+			query = query.order('erp_hoanmy_services.custom_order ASC')
 		end
     
     def self.get_procedure_services(params)
 			query = self.where(category: Erp::Hoanmy::Service::PROCEDURE)
-			query = query.order('erp_hoanmy_services.created_at DESC')
+			query = query.order('erp_hoanmy_services.custom_order ASC')
 		end
     
     def self.search(params)
