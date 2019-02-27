@@ -141,3 +141,6 @@ a.site-button-secondry, a.site-button {
 .alert-warning, .site-button {
 	border-radius: 5px;
 }
+.wt-icon-box-wraper.bx-style-1 {
+	min-height: 215px;
+}
